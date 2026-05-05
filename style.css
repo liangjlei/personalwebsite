@@ -1,0 +1,110 @@
+:root {
+  --bg: #0f172a;
+  --bg-soft: #111827;
+  --text: #e5e7eb;
+  --text-soft: #cbd5e1;
+  --primary: #22d3ee;
+  --card: #1f2937;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC",
+    "Microsoft YaHei", sans-serif;
+  background: linear-gradient(180deg, var(--bg), var(--bg-soft));
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container {
+  width: min(960px, 92%);
+  margin: 0 auto;
+}
+
+.hero {
+  padding: 90px 0 72px;
+  text-align: center;
+}
+
+.tag {
+  color: var(--primary);
+  margin: 0;
+  font-weight: 600;
+}
+
+h1 {
+  margin: 6px 0 8px;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 1.1rem;
+}
+
+.intro {
+  max-width: 620px;
+  margin: 20px auto 28px;
+  color: var(--text-soft);
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  color: #001018;
+  background: var(--primary);
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: 10px;
+}
+
+.section {
+  padding: 20px 0 26px;
+}
+
+h2 {
+  margin-bottom: 12px;
+}
+
+.list {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--text-soft);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 14px 14px 10px;
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.card p {
+  color: var(--text-soft);
+}
+
+.card a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+footer {
+  padding: 28px 0 36px;
+  color: #94a3b8;
+  text-align: center;
+}

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amy | Personal Website</title>
+    <meta
+      name="description"
+      content="Amy 的个人主页：个人介绍、技能、项目与联系方式。"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="container">
+        <p class="tag">Hello, I'm</p>
+        <h1>Amy</h1>
+        <p class="subtitle">Frontend Developer / Designer / Creator</p>
+        <p class="intro">
+          我专注于构建简洁、快速、体验友好的 Web 产品。欢迎来到我的个人主页。
+        </p>
+        <a class="btn" href="#contact">联系我</a>
+      </div>
+    </header>
+
+    <main>
+      <section id="about" class="section container">
+        <h2>关于我</h2>
+        <p>
+          这里可以写你的个人简介，例如学习/工作背景、擅长方向、你在寻找的机会（实习、全职、合作项目等）。
+        </p>
+      </section>
+
+      <section id="skills" class="section container">
+        <h2>技能</h2>
+        <ul class="list">
+          <li>HTML / CSS / JavaScript</li>
+          <li>React / Vue / Next.js</li>
+          <li>Node.js / API Integration</li>
+          <li>UI/UX Design</li>
+        </ul>
+      </section>
+
+      <section id="projects" class="section container">
+        <h2>项目</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>项目名称 1</h3>
+            <p>一句话描述项目价值，说明你解决了什么问题。</p>
+            <a href="#" target="_blank" rel="noreferrer">查看项目</a>
+          </article>
+          <article class="card">
+            <h3>项目名称 2</h3>
+            <p>可以展示技术栈、挑战点或成果（例如性能提升、用户增长等）。</p>
+            <a href="#" target="_blank" rel="noreferrer">查看项目</a>
+          </article>
+          <article class="card">
+            <h3>项目名称 3</h3>
+            <p>可放 GitHub 仓库链接、在线演示链接或截图介绍。</p>
+            <a href="#" target="_blank" rel="noreferrer">查看项目</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="section container">
+        <h2>联系方式</h2>
+        <ul class="list">
+          <li>Email: your_email@example.com</li>
+          <li>GitHub: github.com/AmyLCJYLY</li>
+          <li>LinkedIn: linkedin.com/in/your-id</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>© <span id="year"></span> Amy. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
