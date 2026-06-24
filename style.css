@@ -361,6 +361,42 @@ span.hl {
   border-top: none;
 }
 
+/* ===================== EDUCATION ===================== */
+.education {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+}
+
+.edu-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.edu-logo {
+  width: 52px;
+  height: 52px;
+  flex: 0 0 52px;
+  border-radius: 50%;
+}
+
+.edu-school {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 1.08rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.edu-degree {
+  margin: 2px 0 0;
+  font-size: 0.92rem;
+  color: var(--ink-faint);
+}
+
 /* ===================== RESULTS TABLE ===================== */
 .results-table {
   width: 100%;

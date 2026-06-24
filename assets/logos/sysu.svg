@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" font-family="'Newsreader',Georgia,serif">
+  <circle cx="48" cy="48" r="46" fill="#006a4e"/>
+  <circle cx="48" cy="48" r="46" fill="none" stroke="#d8c89a" stroke-width="2"/>
+  <text x="48" y="46" fill="#ffffff" font-size="24" font-weight="600" text-anchor="middle">SYSU</text>
+  <text x="48" y="66" fill="#dCEAD9" font-size="11" text-anchor="middle" font-family="'PingFang SC','Microsoft YaHei',sans-serif">中山大學</text>
+</svg>
