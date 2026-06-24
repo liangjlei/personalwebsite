@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" font-family="'Inter','Helvetica Neue',Arial,sans-serif">
+  <rect width="600" height="450" fill="#ffffff"/>
+  <rect x="0" y="0" width="600" height="6" fill="#1f3a5f"/>
+  <text x="30" y="44" fill="#1a2b40" font-size="21" font-weight="700">Active-Speaker Detection: Paradigm Survey</text>
+  <text x="30" y="66" fill="#7a7a7a" font-size="13">reproduced &amp; benchmarked three audio-visual paradigms</text>
+
+  <!-- Header row -->
+  <rect x="30" y="86" width="540" height="40" fill="#1f3a5f"/>
+  <g fill="#ffffff" font-size="12.5" font-weight="600" text-anchor="middle">
+    <text x="110" y="111">Method</text>
+    <text x="245" y="111">Output</text>
+    <text x="345" y="111">Multi-person</text>
+    <text x="430" y="111">3-person</text>
+    <text x="505" y="111">Real-time</text>
+  </g>
+
+  <!-- Rows -->
+  <g font-size="13" text-anchor="middle">
+    <!-- AVSegFormer -->
+    <rect x="30" y="126" width="540" height="48" fill="#ffffff" stroke="#e6e3dd"/>
+    <text x="110" y="155" fill="#1a2b40" font-weight="600">AVSegFormer</text>
+    <text x="245" y="155" fill="#4a4a4a">semantic mask</text>
+    <text x="345" y="155" fill="#b23b3b" font-weight="700">✗</text>
+    <text x="430" y="155" fill="#8a8a8a">poor</text>
+    <text x="505" y="155" fill="#4a4a4a">medium</text>
+    <!-- AVIS -->
+    <rect x="30" y="174" width="540" height="48" fill="#faf9f6" stroke="#e6e3dd"/>
+    <text x="110" y="203" fill="#1a2b40" font-weight="600">AVIS</text>
+    <text x="245" y="203" fill="#4a4a4a">instance mask</text>
+    <text x="345" y="203" fill="#c8772e" font-weight="700">△</text>
+    <text x="430" y="203" fill="#8a8a8a">fair</text>
+    <text x="505" y="203" fill="#b23b3b">slow</text>
+    <!-- TalkNet (highlight) -->
+    <rect x="30" y="222" width="540" height="50" fill="#fdf3e7" stroke="#c8772e" stroke-width="1.6"/>
+    <text x="110" y="252" fill="#9a5a1f" font-weight="700">TalkNet (ASD)</text>
+    <text x="245" y="252" fill="#1a2b40">face-box + label</text>
+    <text x="345" y="252" fill="#2e7d32" font-weight="700">✓</text>
+    <text x="430" y="252" fill="#2e7d32" font-weight="700">strong</text>
+    <text x="505" y="252" fill="#2e7d32" font-weight="700">✓</text>
+  </g>
+
+  <!-- Selection note -->
+  <rect x="30" y="300" width="540" height="86" rx="10" fill="#f5f7fa" stroke="#e6e3dd"/>
+  <text x="50" y="330" fill="#1a2b40" font-size="13.5" font-weight="600">Selected: TalkNet two-stage pipeline</text>
+  <text x="50" y="354" fill="#4a4a4a" font-size="13">detect → track → ASD  ·  model &lt; 20 MB  ·  real-time at 224 / 160</text>
+  <text x="50" y="375" fill="#4a4a4a" font-size="13">chosen on task fit, accuracy, latency, and deployability</text>
+</svg>

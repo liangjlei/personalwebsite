@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" font-family="'Inter','Helvetica Neue',Arial,sans-serif">
+  <defs>
+    <marker id="ah3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2f5380"/>
+    </marker>
+  </defs>
+  <rect width="600" height="450" fill="#ffffff"/>
+  <rect x="0" y="0" width="600" height="6" fill="#1f3a5f"/>
+  <text x="30" y="44" fill="#1a2b40" font-size="21" font-weight="700">Hand–Eye Camera Calibration</text>
+  <text x="30" y="66" fill="#7a7a7a" font-size="13">solving the eye-in-hand transform from AprilTag observations</text>
+
+  <!-- coordinate triad helper rendered inline for each frame -->
+  <!-- Base frame -->
+  <g transform="translate(95,330)">
+    <line x1="0" y1="0" x2="40" y2="0" stroke="#c0392b" stroke-width="3"/>
+    <line x1="0" y1="0" x2="0" y2="-40" stroke="#27ae60" stroke-width="3"/>
+    <circle cx="0" cy="0" r="3.5" fill="#1a2b40"/>
+    <text x="-6" y="20" fill="#1f3a5f" font-size="13" font-weight="600">base</text>
+  </g>
+  <!-- End-effector frame -->
+  <g transform="translate(255,250)">
+    <line x1="0" y1="0" x2="36" y2="0" stroke="#c0392b" stroke-width="3"/>
+    <line x1="0" y1="0" x2="0" y2="-36" stroke="#27ae60" stroke-width="3"/>
+    <circle cx="0" cy="0" r="3.5" fill="#1a2b40"/>
+    <text x="6" y="22" fill="#1f3a5f" font-size="13" font-weight="600">end-effector</text>
+  </g>
+  <!-- Camera frame -->
+  <g transform="translate(255,135)">
+    <rect x="-20" y="-16" width="40" height="28" rx="4" fill="#e8eef5" stroke="#1f3a5f" stroke-width="2"/>
+    <polygon points="20,-8 36,-16 36,12 20,4" fill="#e8eef5" stroke="#1f3a5f" stroke-width="2"/>
+    <text x="-16" y="-26" fill="#1f3a5f" font-size="13" font-weight="600">camera</text>
+  </g>
+  <!-- AprilTag -->
+  <g transform="translate(450,120)">
+    <rect x="0" y="0" width="84" height="84" fill="#1a2b40"/>
+    <g fill="#ffffff">
+      <rect x="12" y="12" width="15" height="15"/><rect x="42" y="12" width="15" height="15"/>
+      <rect x="27" y="27" width="15" height="15"/><rect x="57" y="27" width="15" height="15"/>
+      <rect x="12" y="42" width="15" height="15"/><rect x="42" y="57" width="15" height="15"/>
+    </g>
+    <text x="42" y="104" fill="#1f3a5f" font-size="13" font-weight="600" text-anchor="middle">AprilTag 36h11</text>
+  </g>
+
+  <!-- transforms -->
+  <path d="M105,318 L246,262" stroke="#2f5380" stroke-width="2" fill="none" stroke-dasharray="6 4" marker-end="url(#ah3)"/>
+  <text x="120" y="268" fill="#9a5a1f" font-size="12.5" font-weight="600">T  (known)</text>
+  <path d="M255,236 L255,162" stroke="#c8772e" stroke-width="2.4" fill="none" marker-end="url(#ah3)"/>
+  <text x="265" y="202" fill="#9a5a1f" font-size="12.5" font-weight="700">X  (unknown)</text>
+  <path d="M292,132 L444,150" stroke="#2f5380" stroke-width="2" fill="none" stroke-dasharray="6 4" marker-end="url(#ah3)"/>
+  <text x="338" y="128" fill="#7a7a7a" font-size="12">observed</text>
+
+  <!-- Equation -->
+  <rect x="360" y="250" width="174" height="50" rx="10" fill="#1f3a5f"/>
+  <text x="447" y="282" fill="#ffffff" font-size="22" font-weight="700" text-anchor="middle" font-style="italic">A · X = X · B</text>
+
+  <!-- Bottom note -->
+  <rect x="30" y="338" width="504" height="76" rx="10" fill="#f5f7fa" stroke="#e6e3dd"/>
+  <text x="50" y="368" fill="#1a2b40" font-size="13.5" font-weight="600">MLE + Gauss–Newton on SE(3)</text>
+  <text x="50" y="392" fill="#4a4a4a" font-size="13">Huber robust loss suppresses outliers  ·  millimeter-level residual</text>
+</svg>

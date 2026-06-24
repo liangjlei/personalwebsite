@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" font-family="'Inter','Helvetica Neue',Arial,sans-serif">
+  <defs>
+    <marker id="ah2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2f5380"/>
+    </marker>
+    <style>
+      .flow{stroke:#2f5380;stroke-width:2.2;fill:none;marker-end:url(#ah2);}
+      .dim{fill:#9a5a1f;font-size:12px;font-weight:600;text-anchor:middle;}
+      .box{fill:#e8eef5;stroke:#1f3a5f;stroke-width:1.5;}
+      .bt{fill:#1f3a5f;font-size:13.5px;font-weight:600;text-anchor:middle;}
+    </style>
+  </defs>
+  <rect width="600" height="450" fill="#ffffff"/>
+  <rect x="0" y="0" width="600" height="6" fill="#1f3a5f"/>
+  <text x="30" y="44" fill="#1a2b40" font-size="21" font-weight="700">Transformer Teleop Retargeting</text>
+  <text x="30" y="66" fill="#7a7a7a" font-size="13">human IMU → learned encoder → robot joints, in real time</text>
+
+  <!-- Operator icon -->
+  <g transform="translate(78,200)" stroke="#1f3a5f" stroke-width="2.5" fill="none">
+    <circle cx="0" cy="-44" r="15" fill="#e8eef5"/>
+    <line x1="0" y1="-29" x2="0" y2="18"/>
+    <line x1="-22" y1="-12" x2="22" y2="-12"/>
+    <line x1="0" y1="18" x2="-16" y2="50"/>
+    <line x1="0" y1="18" x2="16" y2="50"/>
+  </g>
+  <text x="78" y="278" fill="#1f3a5f" font-size="13" font-weight="600" text-anchor="middle">Operator · IMU</text>
+
+  <!-- Encoder box -->
+  <rect class="box" x="190" y="160" width="150" height="80" rx="12"/>
+  <text class="bt" x="265" y="195">4-layer Transformer</text>
+  <text class="bt" x="265" y="216">Encoder · 1.0 M</text>
+
+  <!-- IK box -->
+  <rect class="box" x="388" y="160" width="120" height="80" rx="12"/>
+  <text class="bt" x="448" y="195">IK decode</text>
+  <text class="bt" x="448" y="216">→ joints</text>
+
+  <!-- Robot icon -->
+  <g transform="translate(552,200)" stroke="#1f3a5f" stroke-width="2.5" fill="none">
+    <line x1="0" y1="-58" x2="0" y2="-46"/><circle cx="0" cy="-60" r="3" fill="#1f3a5f"/>
+    <rect x="-16" y="-46" width="32" height="26" rx="5" fill="#e8eef5"/>
+    <circle cx="-7" cy="-33" r="2.5" fill="#1f3a5f" stroke="none"/><circle cx="7" cy="-33" r="2.5" fill="#1f3a5f" stroke="none"/>
+    <rect x="-14" y="-16" width="28" height="34" rx="4" fill="#e8eef5"/>
+  </g>
+  <text x="552" y="278" fill="#1f3a5f" font-size="13" font-weight="600" text-anchor="middle">Robot</text>
+
+  <!-- Flows with dim labels -->
+  <path class="flow" d="M104,200 L186,200"/><text class="dim" x="145" y="190">60-D IMU</text>
+  <path class="flow" d="M340,200 L384,200"/><text class="dim" x="362" y="190">10-D code</text>
+  <path class="flow" d="M508,200 L532,200"/>
+  <text class="dim" x="448" y="262">/ws/pose @ 10–30 Hz</text>
+
+  <!-- Bottom note -->
+  <rect x="30" y="338" width="540" height="76" rx="10" fill="#f5f7fa" stroke="#e6e3dd"/>
+  <text x="50" y="368" fill="#1a2b40" font-size="13.5" font-weight="600">analytic IK + T-pose  →  learned policy</text>
+  <text x="50" y="392" fill="#4a4a4a" font-size="13">smoother &amp; robust to IMU noise, under-constrained mapping, and singular poses</text>
+</svg>

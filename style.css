@@ -1,0 +1,474 @@
+/* ===================== TOKENS ===================== */
+:root {
+  --bg: #fbfaf8;
+  --surface: #ffffff;
+  --ink: #1a1a1a;
+  --ink-soft: #4a4a4a;
+  --ink-faint: #7a7a7a;
+  --line: #e6e3dd;
+  --accent: #1f3a5f; /* deep navy, echoing the portrait backdrop */
+  --accent-soft: #2f5380;
+  --max: 920px;
+  --serif: "Newsreader", Georgia, "Times New Roman", serif;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16.5px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+a:hover {
+  border-bottom-color: var(--accent);
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.mono {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.86em;
+  color: var(--accent-soft);
+  background: rgba(31, 58, 95, 0.05);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+
+/* ===================== NAV ===================== */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(251, 250, 248, 0.88);
+  backdrop-filter: saturate(180%) blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.nav-name {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--ink);
+  border: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  border: none;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+/* ===================== LAYOUT ===================== */
+.section {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 56px 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.section:last-of-type {
+  border-bottom: none;
+}
+
+.section-title {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.5rem;
+  letter-spacing: -0.01em;
+  margin: 0 0 28px;
+  color: var(--ink);
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 38px;
+  height: 2px;
+  background: var(--accent);
+  margin-top: 10px;
+}
+
+.section-lead {
+  color: var(--ink-soft);
+  margin: -8px 0 26px;
+  max-width: 62ch;
+}
+
+/* ===================== HERO ===================== */
+.hero {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 44px;
+  align-items: start;
+}
+
+.hero-photo img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  box-shadow: 0 8px 30px rgba(31, 58, 95, 0.12);
+}
+
+.hero-text h1 {
+  font-family: var(--serif);
+  font-size: 2.6rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 4px 0 6px;
+  line-height: 1.1;
+}
+
+.affiliation {
+  font-size: 1rem;
+  color: var(--accent);
+  font-weight: 500;
+  margin: 0 0 18px;
+}
+
+.lead {
+  color: var(--ink-soft);
+  margin: 0 0 14px;
+  max-width: 60ch;
+}
+
+.contacts {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  padding: 0;
+  margin: 22px 0 0;
+}
+
+.contacts li a {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--accent);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 5px 14px;
+  background: var(--surface);
+}
+
+.contacts li a:hover {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+
+.contacts-large {
+  margin-top: 4px;
+}
+
+.contacts-large li a {
+  font-size: 0.98rem;
+}
+
+/* ===================== RESEARCH INTERESTS ===================== */
+.interests,
+.skills {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 26px 36px;
+}
+
+.interest h3 {
+  font-family: var(--serif);
+  font-size: 1.12rem;
+  font-weight: 600;
+  margin: 0 0 6px;
+}
+
+.interest p,
+.skill-col p {
+  color: var(--ink-soft);
+  margin: 0;
+  font-size: 0.96rem;
+}
+
+.skill-col h4 {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin: 0 0 8px;
+}
+
+/* ===================== NEWS ===================== */
+.news {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.news li {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 18px;
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+}
+
+.news li:first-child {
+  border-top: none;
+}
+
+.news-date {
+  color: var(--ink-faint);
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+  padding-top: 1px;
+}
+
+.news-body {
+  color: var(--ink-soft);
+}
+
+/* ===================== PROJECTS ===================== */
+.project {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 28px;
+  padding: 28px 0;
+  border-top: 1px solid var(--line);
+}
+
+.project:first-of-type {
+  border-top: none;
+  padding-top: 4px;
+}
+
+.project-thumb img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  background: #f0eee9;
+}
+
+.project-body h3 {
+  font-family: var(--serif);
+  font-size: 1.24rem;
+  font-weight: 600;
+  margin: 0 0 4px;
+  line-height: 1.25;
+}
+
+.project-meta {
+  color: var(--ink-faint);
+  font-size: 0.88rem;
+  margin: 0 0 10px;
+}
+
+.project-body p {
+  color: var(--ink-soft);
+  margin: 0 0 10px;
+  font-size: 0.97rem;
+}
+
+.project-links {
+  font-size: 0.9rem;
+  color: var(--ink-faint);
+}
+
+.project-links a {
+  font-weight: 500;
+}
+
+/* ---- Jon Barron-style academic paper list ---- */
+.pub-authors {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+
+.pub-venue {
+  margin: 0 0 10px;
+  font-size: 0.9rem;
+  color: var(--ink-faint);
+}
+
+span.hl {
+  background: #fdf3c4;
+  padding: 0 3px;
+  border-radius: 3px;
+}
+
+.project.highlight {
+  border-top: none;
+  background: #fffbe9;
+  border-radius: 10px;
+  padding: 22px;
+  margin: 10px 0;
+  align-items: center;
+}
+
+.project.highlight + .project {
+  border-top: none;
+}
+
+/* ===================== RESULTS TABLE ===================== */
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.94rem;
+}
+
+.results-table th,
+.results-table td {
+  text-align: left;
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.results-table thead th {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-faint);
+  border-bottom: 2px solid var(--accent);
+}
+
+.results-table tbody tr:hover {
+  background: rgba(31, 58, 95, 0.03);
+}
+
+.results-table .num {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.results-table td:first-child {
+  color: var(--ink-faint);
+  white-space: nowrap;
+}
+
+/* ===================== MISC ===================== */
+.note:empty {
+  display: none;
+}
+
+.footer {
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+}
+
+.footer-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 28px 24px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  color: var(--ink-faint);
+  font-size: 0.88rem;
+}
+
+.footer-inner p {
+  margin: 0;
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 720px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .hero-photo {
+    max-width: 200px;
+  }
+
+  .hero-text h1 {
+    font-size: 2.1rem;
+  }
+
+  .interests,
+  .skills {
+    grid-template-columns: 1fr;
+  }
+
+  .project {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .project-thumb {
+    max-width: 240px;
+  }
+
+  .news li {
+    grid-template-columns: 78px 1fr;
+    gap: 12px;
+  }
+
+  .nav-links {
+    gap: 14px;
+  }
+
+  .results-table {
+    font-size: 0.86rem;
+  }
+
+  .results-table th,
+  .results-table td {
+    padding: 9px 8px;
+  }
+}

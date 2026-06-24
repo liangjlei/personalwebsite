@@ -1,222 +1,521 @@
-<!DOCTYPE HTML>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-    <title>Jinglei Liang</title>
-
-    <meta name="author" content="Jinglei Liang">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jinglei Liang | Embodied AI</title>
+    <meta
+      name="description"
+      content="Jinglei Liang — Embodied AI engineer working on robot perception, speech interaction, and vision-language-action models."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
   </head>
-
   <body>
-    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-      <tr style="padding:0px">
-        <td style="padding:0px">
+    <!-- ===================== NAV ===================== -->
+    <nav class="nav">
+      <div class="nav-inner">
+        <a class="nav-name" href="#top">Jinglei Liang</a>
+        <div class="nav-links">
+          <a href="#about">about</a>
+          <a href="#news">news</a>
+          <a href="#research">research</a>
+          <a href="#results">results</a>
+          <a href="#contact">contact</a>
+        </div>
+      </div>
+    </nav>
 
-          <!-- ============ BIO ============ -->
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr style="padding:0px">
-              <td style="padding:2.5%;width:63%;vertical-align:middle">
-                <p class="name" style="text-align: center;">
-                  Jinglei Liang
-                </p>
-                <p>
-                  I am a research scientist working on <strong>robot learning</strong>, <strong>3D perception</strong>, and <strong>embodied AI</strong> at an industry research lab.
-                  My work is about giving robots dependable perception and manipulation skills that hold up outside the lab &mdash;
-                  estimating the physical world (shape, color, contact, success/failure) from cameras, and turning language and demonstrations into robot actions.
-                  Most of my projects pair a carefully engineered classical baseline with a learned model, and are validated on real hardware under conditions the model never saw during training.
-                </p>
-                <p style="text-align:center">
-                  <a href="mailto:jinglei.liang@example.com">Email</a> &nbsp;/&nbsp;
-                  <a href="https://scholar.google.com/">Scholar</a> &nbsp;/&nbsp;
-                  <a href="https://github.com/liangjlei">Github</a>
-                </p>
-              </td>
-              <td style="padding:2.5%;width:37%;max-width:37%">
-                <img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo" src="images/profile.jpg" class="hoverZoomLink">
-              </td>
-            </tr>
-          </tbody></table>
+    <main id="top">
+      <!-- ===================== HERO / ABOUT ===================== -->
+      <header class="hero section">
+        <div class="hero-grid">
+          <div class="hero-photo">
+            <img src="./assets/profile.jpg" alt="Portrait of Jinglei Liang" />
+          </div>
+          <div class="hero-text">
+            <h1>Jinglei Liang</h1>
+            <p class="affiliation">
+              Embodied AI &middot; On-Device Robotics Team
+            </p>
+            <p class="lead">
+              I build the perception and interaction stack that lets robots
+              <em>hear</em>, <em>understand</em>, and <em>act</em> in the
+              physical world. My work spans streaming speech recognition,
+              multimodal grounding, vision&ndash;language&ndash;action (VLA)
+              models, and the systems engineering that ties them together on
+              real hardware.
+            </p>
+            <p class="lead">
+              Most recently I led the on-device speech &amp; manipulation
+              pipeline for a live human&ndash;robot interaction demo, reaching
+              <strong>95%+ intent accuracy</strong> and an
+              <strong>80.4% place success rate</strong> across 110+ on-robot
+              trials.
+            </p>
+            <ul class="contacts">
+              <li><a href="mailto:liangjlei0112@163.com">Email</a></li>
+              <li><a href="https://github.com/liangjlei">GitHub</a></li>
+              <li><a href="#">Google&nbsp;Scholar</a></li>
+              <li><a href="./assets/CV_Jinglei_Liang.pdf">CV&nbsp;(PDF)</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
 
-          <!-- ============ RESEARCH ============ -->
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+      <!-- ===================== RESEARCH INTERESTS ===================== -->
+      <section id="about" class="section">
+        <h2 class="section-title">Research Interests</h2>
+        <div class="interests">
+          <div class="interest">
+            <h3>Robot Speech Interaction</h3>
+            <p>
+              Real-time streaming ASR, voice activity detection, endpointing,
+              and intent understanding for noisy far-field human&ndash;robot
+              dialogue.
+            </p>
+          </div>
+          <div class="interest">
+            <h3>Multimodal Perception</h3>
+            <p>
+              VLM + open-vocabulary segmentation for object grounding, grasp
+              verification, and language-conditioned manipulation.
+            </p>
+          </div>
+          <div class="interest">
+            <h3>Vision&ndash;Language&ndash;Action</h3>
+            <p>
+              Parameter-efficient fine-tuning and evaluation of VLA policies
+              that map natural-language instructions to continuous control.
+            </p>
+          </div>
+          <div class="interest">
+            <h3>Robotics Systems</h3>
+            <p>
+              ROS2 pipelines, state-machine orchestration, camera calibration,
+              and the engineering discipline that keeps live demos stable.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== NEWS ===================== -->
+      <section id="news" class="section">
+        <h2 class="section-title">News</h2>
+        <ul class="news">
+          <li>
+            <span class="news-date">May 2026</span>
+            <span class="news-body"
+              >Delivered the on-device speech &amp; place pipeline for the live
+              HRI demo &mdash; <strong>80.4% place</strong>,
+              <strong>91.6% grasp-check</strong> across 110+ on-robot stress
+              tests.</span
+            >
+          </li>
+          <li>
+            <span class="news-date">Apr 2026</span>
+            <span class="news-body"
+              >Fine-tuned <strong>&pi;0.5</strong> on the
+              <strong>LIBERO</strong> benchmark, reaching
+              <strong>94.2% mean</strong> success and
+              <strong>88.8% on LIBERO-Long</strong> (+3.6 pt over the official
+              checkpoint).</span
+            >
+          </li>
+          <li>
+            <span class="news-date">Mar 2026</span>
+            <span class="news-body"
+              >Completed a three-paradigm survey on multi-speaker active speaker
+              detection; selected a TalkNet-based real-time pipeline for the
+              exhibition setting.</span
+            >
+          </li>
+          <li>
+            <span class="news-date">Jan 2026</span>
+            <span class="news-body"
+              >Joined the On-Device Robotics team; led motion retargeting and
+              co-built the multimodal perception stack for an affective HRI
+              system.</span
+            >
+          </li>
+        </ul>
+        <p class="note">
+          <!-- ASSET: update with real dates / links as work is published. -->
+        </p>
+      </section>
+
+      <!-- ===================== SELECTED RESEARCH / PROJECTS ===================== -->
+      <section id="research" class="section">
+        <h2 class="section-title">Selected Projects</h2>
+        <p class="section-lead">
+          A selection of my work in embodied AI &mdash; robot perception,
+          speech interaction, vision&ndash;language&ndash;action policies, and
+          the agent systems around them. Representative projects are
+          <span class="hl">highlighted</span>. Each links to a full write-up.
+        </p>
+
+        <article class="project highlight">
+          <div class="project-thumb">
+            <img
+              src="./assets/projects/perception-pipeline.svg"
+              alt="On-device perception pipeline diagram"
+            />
+          </div>
+          <div class="project-body">
+            <h3>Streaming Multimodal Speech Grounding for Real-Time Human&ndash;Robot Interaction</h3>
+            <p class="pub-authors"><strong>Jinglei Liang</strong></p>
+            <p class="pub-venue"><em>Technical Report</em>, 2026</p>
+            <p>
+              An end-to-end voice-to-action stack for service robots:
+              <span class="mono"
+                >mic&nbsp;PCM &rarr; VAD &rarr; ASR &rarr; NLU &rarr; VLM/SAM &rarr;
+                motion&nbsp;planner &rarr; TTS</span
+              >, fully decoupled as ROS2 nodes under a state-machine
+              orchestrator. I rebuilt the streaming-ASR path (stable
+              150&ndash;300&nbsp;ms partials), designed a three-stage
+              voice-activity gate that cut inference compute by <strong>86%</strong>
+              and tripled far-field recall, and moved color grounding from HSV
+              heuristics into the vision&ndash;language stage to eliminate
+              referent mis-rejections.
+            </p>
+            <p class="project-links">
+              <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/multimodal-speech-grounding">project page</a>
+              &middot;
+              <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/multimodal-speech-grounding#readme">report</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="project highlight">
+          <div class="project-thumb">
+            <img
+              src="./assets/projects/pi05-libero.svg"
+              alt="Vision-language-action fine-tuning results"
+            />
+          </div>
+          <div class="project-body">
+            <h3>Parameter-Efficient Adaptation of Vision&ndash;Language&ndash;Action Policies for Long-Horizon Manipulation</h3>
+            <p class="pub-authors"><strong>Jinglei Liang</strong></p>
+            <p class="pub-venue"><em>Preprint</em>, 2026</p>
+            <p>
+              A five-component recipe for parameter-efficient VLA adaptation:
+              selective LoRA placement, LLM-based instruction augmentation,
+              test-time action-chunk fusion, EMA weight averaging, and
+              failure-case resampling. Together they lift mean success from
+              92.2% to <strong>94.2%</strong> and the long-horizon split to
+              <strong>88.8%</strong> (+3.6&nbsp;pt over the official checkpoint),
+              while cutting flow-matching loss by 80% over 2,000 evaluation
+              episodes.
+            </p>
+            <p class="project-links">
+              <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/vla-parameter-efficient-adaptation">project page</a>
+              &middot;
+              <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/vla-parameter-efficient-adaptation#readme">report</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-thumb">
+            <img
+              src="./assets/projects/teleop-retargeting.svg"
+              alt="Transformer teleoperation retargeting"
+            />
+          </div>
+          <div class="project-body">
+            <h3>Neural Motion Retargeting for Affective Whole-Body Teleoperation</h3>
+            <p class="pub-authors"><strong>Jinglei Liang</strong></p>
+            <p class="pub-venue"><em>Technical Report</em>, 2026</p>
+            <p>
+              A &ldquo;perceive&nbsp;&rarr; infer&nbsp;affect&nbsp;&rarr;
+              generate&nbsp;motion&nbsp;&rarr; drive&nbsp;hardware&rdquo;
+              interaction system. I replaced analytic IK with T-pose calibration
+              by a 4-layer Transformer retargeting model (1.0&nbsp;M params,
+              60-D&nbsp;IMU &rarr; 10-D encoding), markedly improving motion
+              smoothness and robustness, and added a two-stage detection +
+              vision&ndash;language perception cascade that dropped per-frame
+              latency from 1.5&nbsp;s to ~920&nbsp;ms.
+            </p>
+            <p class="project-links">
+              <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/neural-motion-retargeting">project page</a>
+              &middot;
+              <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/neural-motion-retargeting#readme">report</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-thumb">
+            <img
+              src="./assets/projects/asd-survey.svg"
+              alt="Active speaker detection study"
+            />
+          </div>
+          <div class="project-body">
+            <h3>A Comparative Study of Audio&ndash;Visual Active Speaker Detection in Unconstrained Scenes</h3>
+            <p class="pub-authors"><strong>Jinglei Liang</strong></p>
+            <p class="pub-venue"><em>Survey / Technical Report</em>, 2026</p>
+            <p>
+              A coarse-to-fine comparison of three audio&ndash;visual paradigms
+              &mdash; semantic audio&ndash;visual segmentation, audio&ndash;visual
+              instance segmentation, and active speaker detection &mdash; for the
+              &ldquo;who is speaking to me&rdquo; problem in crowded scenes. I
+              reproduced and benchmarked all three and selected a two-stage
+              detect&nbsp;&rarr;&nbsp;track&nbsp;&rarr;&nbsp;ASD pipeline
+              (model&nbsp;&lt;&nbsp;20&nbsp;MB, real-time) along task alignment,
+              accuracy, latency, and deployability.
+            </p>
+            <p class="project-links">
+              <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/audio-visual-active-speaker-detection">project page</a>
+              &middot;
+              <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/audio-visual-active-speaker-detection#readme">report</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-thumb">
+            <img
+              src="./assets/projects/calibration.svg"
+              alt="Robot hand-eye calibration"
+            />
+          </div>
+          <div class="project-body">
+            <h3>Robust Hand&ndash;Eye Calibration via SE(3) Maximum-Likelihood Estimation</h3>
+            <p class="pub-authors"><strong>Jinglei Liang</strong></p>
+            <p class="pub-venue"><em>Open-source toolkit</em>, 2026</p>
+            <p>
+              A standardized hand&ndash;eye calibration pipeline (AprilTag
+              36h11, maximum-likelihood estimation with Gauss&ndash;Newton on
+              SE(3) under a Huber robust loss, millimeter-level residuals) plus a
+              reusable intrinsics procedure covering both eye-on-base and
+              eye-on-hand configurations. The toolkit drove a long-running
+              automated assembly demonstration with <strong>20/20</strong>
+              consecutive successful runs across <strong>10+ public showings</strong>.
+            </p>
+            <p class="project-links">
+              <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/robust-hand-eye-calibration">project page</a>
+              &middot;
+              <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/robust-hand-eye-calibration#readme">guide</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-thumb">
+            <img
+              src="./assets/projects/agent-platform.svg"
+              alt="Multi-tenant LLM agent control plane diagram"
+            />
+          </div>
+          <div class="project-body">
+            <h3>A Multi-Tenant Control Plane for Orchestrating Large Language Model Agents</h3>
+            <p class="pub-authors"><strong>Jinglei Liang</strong></p>
+            <p class="pub-venue"><em>Systems Report</em>, 2026</p>
+            <p>
+              A control plane that turns a bare agent runtime into a team-ready
+              platform. I built the orchestration layer (Hono&nbsp;+&nbsp;SQLite):
+              multi-user auth (API&nbsp;key&nbsp;/&nbsp;OIDC) with audit logging, a
+              <strong>unified streaming <span class="mono">invoke()</span></strong>
+              routing across four model families behind one API, and
+              <strong>per-tenant isolation</strong> of skills, knowledge, and
+              shared memory, bridged to repository sync and webhooks for
+              end-to-end delivery.
+            </p>
+            <p class="project-links">
+              <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/llm-agent-control-plane">project page</a>
+              &middot;
+              <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/llm-agent-control-plane#readme">overview</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-thumb">
+            <img
+              src="./assets/projects/agent-network.svg"
+              alt="Internet of agents connector diagram"
+            />
+          </div>
+          <div class="project-body">
+            <h3>Toward an Internet of Agents: Structured Tool Connectors for Autonomous Catalog Reasoning</h3>
+            <p class="pub-authors"><strong>Jinglei Liang</strong></p>
+            <p class="pub-venue"><em>Open-source project</em>, 2026</p>
+            <p>
+              A lightweight connector layer that lets autonomous agents query an
+              external catalog through a single structured protocol. Agents fetch
+              item details, search, and inventory via a brand-agnostic JSON API
+              with rate-limited, retry-safe access &mdash; turning an opaque
+              third-party data source into a typed tool that planning and pricing
+              agents can call without bespoke integration code.
+            </p>
+            <p class="project-links">
+              <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/internet-of-agents-connectors">project page</a>
+              &middot;
+              <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/internet-of-agents-connectors#readme">code</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-thumb">
+            <img
+              src="./assets/projects/llm-agent.svg"
+              alt="General-purpose LLM agent loop diagram"
+            />
+          </div>
+          <div class="project-body">
+            <h3>Tool-Augmented General-Purpose Agents: Planning and Sandboxed Execution</h3>
+            <p class="pub-authors"><strong>Jinglei Liang</strong></p>
+            <p class="pub-venue"><em>Technical Note</em>, 2026</p>
+            <p>
+              A study and extension of a ReAct-style agent that plans, selects
+              tools, and executes them in a sandbox with a pluggable LLM backend.
+              I analyzed the planning&ndash;tool&ndash;observation loop, added and
+              evaluated custom tools, and used the framework as a testbed for how
+              general agents can drive the perception and robotics services in my
+              other projects.
+            </p>
+            <p class="project-links">
+              <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/tool-augmented-agents">project page</a>
+              &middot;
+              <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/tool-augmented-agents#readme">notes</a>
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <!-- ===================== SELECTED RESULTS (TABLE) ===================== -->
+      <section id="results" class="section">
+        <h2 class="section-title">Selected Results</h2>
+        <p class="section-lead">
+          Headline metrics from on-robot evaluation and simulation. Every figure
+          traces to a dated technical report with commit / log anchors.
+        </p>
+        <table class="results-table">
+          <thead>
             <tr>
-              <td style="padding:16px;width:100%;vertical-align:middle">
-                <h2>Research</h2>
-                <p>
-                  I am interested in robotic manipulation, embodied perception, and the systems that connect them.
-                  A recurring theme is robustness: methods that keep working under lighting changes, novel objects, and real-world noise.
-                  Selected projects are <span class="highlight">highlighted</span>.
-                </p>
-              </td>
+              <th>Area</th>
+              <th>Metric</th>
+              <th>Result</th>
+              <th>Setting</th>
             </tr>
-          </tbody></table>
-
-          <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-
-            <!-- Grasp verification (highlighted) -->
-            <tr onmouseout="grasp_stop()" onmouseover="grasp_start()" bgcolor="#ffffd0">
-              <td style="padding:16px;width:25%;vertical-align:middle">
-                <div class="one">
-                  <div class="two" id="grasp_image"><img src="images/grasp_sample.jpg" width="160" height="160" style="object-fit:cover"></div>
-                  <img src="images/grasp_principle.jpg" width="160" height="160" style="object-fit:cover">
-                </div>
-                <script type="text/javascript">
-                  function grasp_start() { document.getElementById('grasp_image').style.opacity = "1"; }
-                  function grasp_stop()  { document.getElementById('grasp_image').style.opacity = "0"; }
-                  grasp_stop()
-                </script>
-              </td>
-              <td style="padding:8px;width:75%;vertical-align:middle">
-                <span class="papertitle">Cross-Illumination Grasp Verification from Fingertip Cameras</span>
-                <br>
-                <strong>Jinglei Liang</strong>
-                <br>
-                <em>Technical Report</em>, 2026
-                <br>
-                <a href="https://github.com/liangjlei">code</a>
-                <p></p>
-                <p>
-                  A lightweight binary classifier decides whether a grasp succeeded or failed directly from in-hand fingertip camera views.
-                  I compare a calibrated computer-vision baseline against a fine-tuned MobileNetV3 classifier, reaching 99.7% accuracy under normal lighting
-                  and, crucially, retaining accuracy on a held-out low-light regime never seen in training &mdash; a cross-illumination evaluation that exposes
-                  the brittleness of threshold-based baselines.
-                </p>
-              </td>
-            </tr>
-
-            <!-- SKU segmentation (highlighted) -->
-            <tr bgcolor="#ffffd0">
-              <td style="padding:16px;width:25%;vertical-align:middle">
-                <div class="one" style="height:160px">
-                  <img src="images/sku_scene.jpg" width="160" height="160" style="object-fit:cover">
-                </div>
-              </td>
-              <td style="padding:8px;width:75%;vertical-align:middle">
-                <span class="papertitle">Open-Vocabulary Multi-Camera Instance Segmentation for Bin Picking</span>
-                <br>
-                <strong>Jinglei Liang</strong>
-                <br>
-                <em>Technical Report</em>, 2026
-                <br>
-                <a href="https://github.com/liangjlei">code</a>
-                <p></p>
-                <p>
-                  A promptable segmentation pipeline that fuses four calibrated RGB-D viewpoints to segment arbitrary, previously unseen objects in a cluttered bin.
-                  By combining multi-view geometry with open-vocabulary masks, the system isolates individual items for grasping without any per-object training,
-                  handling dense clutter and partial occlusion across viewpoints.
-                </p>
-              </td>
-            </tr>
-
-            <!-- Language-to-action -->
-            <tr onmouseout="lang_stop()" onmouseover="lang_start()">
-              <td style="padding:16px;width:25%;vertical-align:middle">
-                <div class="one">
-                  <div class="two" id="lang_image"><img src="images/lang_retarget.png" width="160" height="160" style="object-fit:cover"></div>
-                  <img src="images/lang_workspace.png" width="160" height="160" style="object-fit:cover">
-                </div>
-                <script type="text/javascript">
-                  function lang_start() { document.getElementById('lang_image').style.opacity = "1"; }
-                  function lang_stop()  { document.getElementById('lang_image').style.opacity = "0"; }
-                  lang_stop()
-                </script>
-              </td>
-              <td style="padding:8px;width:75%;vertical-align:middle">
-                <span class="papertitle">Language-Conditioned Manipulation with Diffusion and CVAE Policies</span>
-                <br>
-                <strong>Jinglei Liang</strong>
-                <br>
-                <em>Technical Report</em>, 2026
-                <br>
-                <a href="https://github.com/liangjlei">code</a>
-                <p></p>
-                <p>
-                  Mapping free-form natural-language instructions to robot trajectories. I study two generative action policies &mdash; a conditional VAE and a
-                  diffusion policy &mdash; both conditioned on embeddings from a large multimodal language model, and pair them with a motion-retargeting stage
-                  that transfers human-demonstrated motions onto the robot. The result executes language commands end-to-end on a real arm.
-                </p>
-              </td>
-            </tr>
-
-            <!-- Hand-eye calibration -->
-            <tr onmouseout="calib_stop()" onmouseover="calib_start()">
-              <td style="padding:16px;width:25%;vertical-align:middle">
-                <div class="one">
-                  <div class="two" id="calib_image"><img src="images/calib_hand.png" width="160" height="160" style="object-fit:cover"></div>
-                  <img src="images/calib_base.png" width="160" height="160" style="object-fit:cover">
-                </div>
-                <script type="text/javascript">
-                  function calib_start() { document.getElementById('calib_image').style.opacity = "1"; }
-                  function calib_stop()  { document.getElementById('calib_image').style.opacity = "0"; }
-                  calib_stop()
-                </script>
-              </td>
-              <td style="padding:8px;width:75%;vertical-align:middle">
-                <span class="papertitle">A Minimal, Reproducible Toolkit for Robot Hand&ndash;Eye Calibration</span>
-                <br>
-                <strong>Jinglei Liang</strong>
-                <br>
-                <em>Open-source toolkit</em>, 2026
-                <br>
-                <a href="https://github.com/liangjlei">code</a>
-                <p></p>
-                <p>
-                  A compact end-to-end implementation of camera intrinsics and hand&ndash;eye extrinsics calibration, covering both eye-on-base (fixed, third-person)
-                  and eye-on-hand (wrist-mounted) configurations via the classic AX&nbsp;=&nbsp;YB formulation. A real-time 3D viewer overlays the estimated camera pose
-                  on the robot model, making it easy to port any camera-plus-arm setup and verify the result at a glance.
-                </p>
-              </td>
-            </tr>
-
-            <!-- Color recognition -->
-            <tr onmouseout="color_stop()" onmouseover="color_start()">
-              <td style="padding:16px;width:25%;vertical-align:middle">
-                <div class="one">
-                  <div class="two" id="color_image"><img src="images/color_orange.png" width="160" height="160" style="object-fit:cover"></div>
-                  <img src="images/color_green.png" width="160" height="160" style="object-fit:cover">
-                </div>
-                <script type="text/javascript">
-                  function color_start() { document.getElementById('color_image').style.opacity = "1"; }
-                  function color_stop()  { document.getElementById('color_image').style.opacity = "0"; }
-                  color_stop()
-                </script>
-              </td>
-              <td style="padding:8px;width:75%;vertical-align:middle">
-                <span class="papertitle">Robust Object Color Recognition under Specular Highlights</span>
-                <br>
-                <strong>Jinglei Liang</strong>
-                <br>
-                <em>Technical Report</em>, 2026
-                <br>
-                <a href="https://github.com/liangjlei">code</a>
-                <p></p>
-                <p>
-                  A real-time perception module that localizes a target object with Hough-circle detection and names its color from the dominant hue in HSV space.
-                  Specular-highlight rejection and a median-band sampling scheme keep the estimate stable under glare, and temporal debouncing suppresses flicker
-                  before the color label is published to downstream tasks.
-                </p>
-              </td>
-            </tr>
-
-          </tbody></table>
-
-          <!-- ============ FOOTER ============ -->
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          </thead>
+          <tbody>
             <tr>
-              <td style="padding:0px">
-                <br>
-                <p style="text-align:right;font-size:small;">
-                  Template based on <a href="https://github.com/jonbarron/jonbarron_website">Jon Barron's website</a>.
-                </p>
-              </td>
+              <td>VLA (sim)</td>
+              <td>LIBERO mean / Long success</td>
+              <td class="num">94.2% / 88.8%</td>
+              <td>2,000 episodes</td>
             </tr>
-          </tbody></table>
+            <tr>
+              <td>Speech</td>
+              <td>ASR + intent accuracy</td>
+              <td class="num">95%+</td>
+              <td>quiet &amp; noisy, on-robot</td>
+            </tr>
+            <tr>
+              <td>Speech</td>
+              <td>Streaming partial latency</td>
+              <td class="num">150&ndash;300 ms</td>
+              <td>cloud streaming path</td>
+            </tr>
+            <tr>
+              <td>Speech</td>
+              <td>VAD inference compute</td>
+              <td class="num">&minus;86%</td>
+              <td>three-stage gate</td>
+            </tr>
+            <tr>
+              <td>Manipulation</td>
+              <td>Grasp-check accuracy</td>
+              <td class="num">91.6%</td>
+              <td>VLM + tactile serial</td>
+            </tr>
+            <tr>
+              <td>Manipulation</td>
+              <td>Place success rate</td>
+              <td class="num">80.4%</td>
+              <td>78 / 97 trials</td>
+            </tr>
+            <tr>
+              <td>Reliability</td>
+              <td>Assembly-demo head-part runs</td>
+              <td class="num">20 / 20</td>
+              <td>10+ external demos</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="note">
+          <!-- ASSET: replace/extend rows as new results land. -->
+        </p>
+      </section>
 
-        </td>
-      </tr>
-    </tbody></table>
+      <!-- ===================== TECHNICAL SKILLS ===================== -->
+      <section id="skills" class="section">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills">
+          <div class="skill-col">
+            <h4>Speech &amp; Language</h4>
+            <p>
+              Streaming ASR, VAD / endpointing, NLU &amp; intent
+              disambiguation, TTS orchestration, barge-in handling.
+            </p>
+          </div>
+          <div class="skill-col">
+            <h4>Vision &amp; Perception</h4>
+            <p>
+              VLM grounding, open-vocabulary segmentation (SAM), camera
+              intrinsic / hand&ndash;eye calibration, TensorRT deployment.
+            </p>
+          </div>
+          <div class="skill-col">
+            <h4>Learning &amp; Models</h4>
+            <p>
+              VLA fine-tuning (LoRA, EMA), multimodal fusion, Transformer
+              teleop retargeting, evaluation design.
+            </p>
+          </div>
+          <div class="skill-col">
+            <h4>Robotics Systems</h4>
+            <p>
+              ROS2 node design, state-machine orchestration, cross-team
+              integration, changelog-driven development &amp; live-demo
+              delivery.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== CONTACT ===================== -->
+      <section id="contact" class="section">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-lead">
+          I&rsquo;m happy to talk about embodied AI, robot perception, and
+          speech interaction. The fastest way to reach me is email.
+        </p>
+        <ul class="contacts contacts-large">
+          <li><a href="mailto:liangjlei0112@163.com">liangjlei0112@163.com</a></li>
+          <li><a href="https://github.com/liangjlei">github.com/liangjlei</a></li>
+          <li><a href="#">Google Scholar</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <p>&copy; <span id="year"></span> Jinglei Liang.</p>
+        <p class="footer-note">Built with plain HTML &amp; CSS.</p>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>

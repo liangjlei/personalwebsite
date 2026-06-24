@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" font-family="'Inter','Helvetica Neue',Arial,sans-serif">
+  <defs>
+    <marker id="ahp" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2f5380"/>
+    </marker>
+    <style>
+      .box{fill:#e8eef5;stroke:#1f3a5f;stroke-width:1.5;}
+      .lbl{fill:#1f3a5f;font-size:14px;font-weight:600;text-anchor:middle;}
+      .flow{stroke:#2f5380;stroke-width:2;fill:none;marker-end:url(#ahp);}
+      .chip{fill:#ffffff;stroke:#c8772e;stroke-width:1.3;}
+      .chiptxt{fill:#9a5a1f;font-size:12px;font-weight:600;text-anchor:middle;}
+    </style>
+  </defs>
+  <rect width="600" height="450" fill="#ffffff"/>
+  <rect x="0" y="0" width="600" height="6" fill="#1f3a5f"/>
+  <text x="30" y="44" fill="#1a2b40" font-size="21" font-weight="700">Enterprise Multi-Agent Control Plane</text>
+  <text x="30" y="66" fill="#7a7a7a" font-size="13">multi-model routing · per-project assets · gateway bridge</text>
+
+  <!-- Control plane bar -->
+  <rect x="30" y="96" width="540" height="44" rx="10" fill="#1f3a5f"/>
+  <text x="300" y="123" fill="#ffffff" font-size="14" font-weight="600" text-anchor="middle">Control Plane  ·  auth / audit / project isolation</text>
+
+  <!-- Model router row -->
+  <g>
+    <rect class="box" x="30"  y="170" width="124" height="54" rx="10"/><text class="lbl" x="92"  y="201">LLM&#8209;A</text>
+    <rect class="box" x="168" y="170" width="124" height="54" rx="10"/><text class="lbl" x="230" y="201">LLM&#8209;B</text>
+    <rect class="box" x="306" y="170" width="124" height="54" rx="10"/><text class="lbl" x="368" y="201">LLM&#8209;C</text>
+    <rect class="box" x="444" y="170" width="126" height="54" rx="10"/><text class="lbl" x="507" y="201">LLM&#8209;D</text>
+  </g>
+  <text x="300" y="158" fill="#7a7a7a" font-size="12" text-anchor="middle">unified streaming invoke()</text>
+
+  <!-- Assets row -->
+  <g>
+    <rect class="box" x="30"  y="252" width="170" height="54" rx="10"/><text class="lbl" x="115" y="283">Skills</text>
+    <rect class="box" x="215" y="252" width="170" height="54" rx="10"/><text class="lbl" x="300" y="283">Knowledge</text>
+    <rect class="box" x="400" y="252" width="170" height="54" rx="10"/><text class="lbl" x="485" y="283">Shared Memory</text>
+  </g>
+  <path class="flow" d="M300,140 L300,168"/>
+  <path class="flow" d="M300,226 L300,250"/>
+
+  <!-- Gateway bridge -->
+  <rect x="30" y="322" width="540" height="40" rx="10" fill="#e8eef5" stroke="#1f3a5f" stroke-width="1.5"/>
+  <text x="300" y="347" fill="#1f3a5f" font-size="13" font-weight="600" text-anchor="middle">Gateway Bridge  ·  sessions · repo sync · webhooks</text>
+
+  <!-- chips -->
+  <g>
+    <rect class="chip" x="30"  y="386" width="176" height="34" rx="17"/><text class="chiptxt" x="118" y="408">per-project isolation</text>
+    <rect class="chip" x="220" y="386" width="160" height="34" rx="17"/><text class="chiptxt" x="300" y="408">4+ models, 1 API</text>
+    <rect class="chip" x="394" y="386" width="176" height="34" rx="17"/><text class="chiptxt" x="482" y="408">OIDC · audit log</text>
+  </g>
+</svg>
