@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" font-family="'Inter','Helvetica Neue',Arial,sans-serif">
+  <rect width="600" height="450" fill="#ffffff"/>
+  <rect x="0" y="0" width="600" height="6" fill="#1f3a5f"/>
+  <text x="30" y="44" fill="#1a2b40" font-size="21" font-weight="700">Tool-Augmented Agent</text>
+  <text x="30" y="66" fill="#7a7a7a" font-size="13">ReAct planning loop</text>
+  <g>
+    <rect x="30"  y="92"  width="262" height="150" rx="12" fill="#eef2f7" stroke="#1f3a5f" stroke-width="1.4"/>
+    <rect x="308" y="92"  width="262" height="150" rx="12" fill="#eef2f7" stroke="#1f3a5f" stroke-width="1.4"/>
+    <rect x="30"  y="258" width="262" height="150" rx="12" fill="#eef2f7" stroke="#1f3a5f" stroke-width="1.4"/>
+    <rect x="308" y="258" width="262" height="150" rx="12" fill="#eef2f7" stroke="#1f3a5f" stroke-width="1.4"/>
+  </g>
+  <text x="161" y="170" fill="#1f3a5f" font-size="40" font-weight="800" text-anchor="middle">plan→act</text>
+  <text x="161" y="206" fill="#5a5a5a" font-size="14" text-anchor="middle">observe loop</text>
+  <text x="439" y="170" fill="#1f3a5f" font-size="40" font-weight="800" text-anchor="middle">sandbox</text>
+  <text x="439" y="206" fill="#5a5a5a" font-size="14" text-anchor="middle">execution</text>
+  <text x="161" y="336" fill="#1f3a5f" font-size="40" font-weight="800" text-anchor="middle">pluggable</text>
+  <text x="161" y="372" fill="#5a5a5a" font-size="14" text-anchor="middle">LLM backend</text>
+  <text x="439" y="336" fill="#1f3a5f" font-size="40" font-weight="800" text-anchor="middle">custom</text>
+  <text x="439" y="372" fill="#5a5a5a" font-size="14" text-anchor="middle">tools</text>
+</svg>

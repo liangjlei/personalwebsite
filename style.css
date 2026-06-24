@@ -291,6 +291,10 @@ strong {
   padding-top: 4px;
 }
 
+.project-thumb {
+  position: relative;
+}
+
 .project-thumb img {
   width: 100%;
   aspect-ratio: 4 / 3;
@@ -298,6 +302,33 @@ strong {
   border-radius: 6px;
   border: 1px solid var(--line);
   background: #f0eee9;
+}
+
+/* Jon Barron-style hover: keep flipping between the two frames */
+.project-thumb .frame-b {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+
+.project-thumb:hover .frame-b {
+  animation: thumb-flip 1.2s step-end infinite;
+}
+
+@keyframes thumb-flip {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-thumb:hover .frame-b {
+    animation: none;
+    opacity: 1;
+  }
 }
 
 .project-body h3 {
