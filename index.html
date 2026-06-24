@@ -1,85 +1,222 @@
-<!doctype html>
-<html lang="zh-CN">
+<!DOCTYPE HTML>
+<html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Amy | Personal Website</title>
-    <meta
-      name="description"
-      content="Amy 的个人主页：个人介绍、技能、项目与联系方式。"
-    />
-    <link rel="stylesheet" href="./style.css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Jinglei Liang</title>
+
+    <meta name="author" content="Jinglei Liang">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
   </head>
+
   <body>
-    <header class="hero">
-      <div class="container">
-        <p class="tag">Hello, I'm</p>
-        <h1>Amy</h1>
-        <p class="subtitle">Frontend Developer / Designer / Creator</p>
-        <p class="intro">
-          我专注于构建简洁、快速、体验友好的 Web 产品。欢迎来到我的个人主页。
-        </p>
-        <a class="btn" href="#contact">联系我</a>
-      </div>
-    </header>
+    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+      <tr style="padding:0px">
+        <td style="padding:0px">
 
-    <main>
-      <section id="about" class="section container">
-        <h2>关于我</h2>
-        <p>
-          这里可以写你的个人简介，例如学习/工作背景、擅长方向、你在寻找的机会（实习、全职、合作项目等）。
-        </p>
-      </section>
+          <!-- ============ BIO ============ -->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr style="padding:0px">
+              <td style="padding:2.5%;width:63%;vertical-align:middle">
+                <p class="name" style="text-align: center;">
+                  Jinglei Liang
+                </p>
+                <p>
+                  I am a research scientist working on <strong>robot learning</strong>, <strong>3D perception</strong>, and <strong>embodied AI</strong> at an industry research lab.
+                  My work is about giving robots dependable perception and manipulation skills that hold up outside the lab &mdash;
+                  estimating the physical world (shape, color, contact, success/failure) from cameras, and turning language and demonstrations into robot actions.
+                  Most of my projects pair a carefully engineered classical baseline with a learned model, and are validated on real hardware under conditions the model never saw during training.
+                </p>
+                <p style="text-align:center">
+                  <a href="mailto:jinglei.liang@example.com">Email</a> &nbsp;/&nbsp;
+                  <a href="https://scholar.google.com/">Scholar</a> &nbsp;/&nbsp;
+                  <a href="https://github.com/liangjlei">Github</a>
+                </p>
+              </td>
+              <td style="padding:2.5%;width:37%;max-width:37%">
+                <img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo" src="images/profile.jpg" class="hoverZoomLink">
+              </td>
+            </tr>
+          </tbody></table>
 
-      <section id="skills" class="section container">
-        <h2>技能</h2>
-        <ul class="list">
-          <li>HTML / CSS / JavaScript</li>
-          <li>React / Vue / Next.js</li>
-          <li>Node.js / API Integration</li>
-          <li>UI/UX Design</li>
-        </ul>
-      </section>
+          <!-- ============ RESEARCH ============ -->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+              <td style="padding:16px;width:100%;vertical-align:middle">
+                <h2>Research</h2>
+                <p>
+                  I am interested in robotic manipulation, embodied perception, and the systems that connect them.
+                  A recurring theme is robustness: methods that keep working under lighting changes, novel objects, and real-world noise.
+                  Selected projects are <span class="highlight">highlighted</span>.
+                </p>
+              </td>
+            </tr>
+          </tbody></table>
 
-      <section id="projects" class="section container">
-        <h2>项目</h2>
-        <div class="cards">
-          <article class="card">
-            <h3>项目名称 1</h3>
-            <p>一句话描述项目价值，说明你解决了什么问题。</p>
-            <a href="#" target="_blank" rel="noreferrer">查看项目</a>
-          </article>
-          <article class="card">
-            <h3>项目名称 2</h3>
-            <p>可以展示技术栈、挑战点或成果（例如性能提升、用户增长等）。</p>
-            <a href="#" target="_blank" rel="noreferrer">查看项目</a>
-          </article>
-          <article class="card">
-            <h3>项目名称 3</h3>
-            <p>可放 GitHub 仓库链接、在线演示链接或截图介绍。</p>
-            <a href="#" target="_blank" rel="noreferrer">查看项目</a>
-          </article>
-        </div>
-      </section>
+          <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
-      <section id="contact" class="section container">
-        <h2>联系方式</h2>
-        <ul class="list">
-          <li>Email: your_email@example.com</li>
-          <li>GitHub: github.com/AmyLCJYLY</li>
-          <li>LinkedIn: linkedin.com/in/your-id</li>
-        </ul>
-      </section>
-    </main>
+            <!-- Grasp verification (highlighted) -->
+            <tr onmouseout="grasp_stop()" onmouseover="grasp_start()" bgcolor="#ffffd0">
+              <td style="padding:16px;width:25%;vertical-align:middle">
+                <div class="one">
+                  <div class="two" id="grasp_image"><img src="images/grasp_sample.jpg" width="160" height="160" style="object-fit:cover"></div>
+                  <img src="images/grasp_principle.jpg" width="160" height="160" style="object-fit:cover">
+                </div>
+                <script type="text/javascript">
+                  function grasp_start() { document.getElementById('grasp_image').style.opacity = "1"; }
+                  function grasp_stop()  { document.getElementById('grasp_image').style.opacity = "0"; }
+                  grasp_stop()
+                </script>
+              </td>
+              <td style="padding:8px;width:75%;vertical-align:middle">
+                <span class="papertitle">Cross-Illumination Grasp Verification from Fingertip Cameras</span>
+                <br>
+                <strong>Jinglei Liang</strong>
+                <br>
+                <em>Technical Report</em>, 2026
+                <br>
+                <a href="https://github.com/liangjlei">code</a>
+                <p></p>
+                <p>
+                  A lightweight binary classifier decides whether a grasp succeeded or failed directly from in-hand fingertip camera views.
+                  I compare a calibrated computer-vision baseline against a fine-tuned MobileNetV3 classifier, reaching 99.7% accuracy under normal lighting
+                  and, crucially, retaining accuracy on a held-out low-light regime never seen in training &mdash; a cross-illumination evaluation that exposes
+                  the brittleness of threshold-based baselines.
+                </p>
+              </td>
+            </tr>
 
-    <footer>
-      <div class="container">
-        <p>© <span id="year"></span> Amy. All rights reserved.</p>
-      </div>
-    </footer>
+            <!-- SKU segmentation (highlighted) -->
+            <tr bgcolor="#ffffd0">
+              <td style="padding:16px;width:25%;vertical-align:middle">
+                <div class="one" style="height:160px">
+                  <img src="images/sku_scene.jpg" width="160" height="160" style="object-fit:cover">
+                </div>
+              </td>
+              <td style="padding:8px;width:75%;vertical-align:middle">
+                <span class="papertitle">Open-Vocabulary Multi-Camera Instance Segmentation for Bin Picking</span>
+                <br>
+                <strong>Jinglei Liang</strong>
+                <br>
+                <em>Technical Report</em>, 2026
+                <br>
+                <a href="https://github.com/liangjlei">code</a>
+                <p></p>
+                <p>
+                  A promptable segmentation pipeline that fuses four calibrated RGB-D viewpoints to segment arbitrary, previously unseen objects in a cluttered bin.
+                  By combining multi-view geometry with open-vocabulary masks, the system isolates individual items for grasping without any per-object training,
+                  handling dense clutter and partial occlusion across viewpoints.
+                </p>
+              </td>
+            </tr>
 
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
+            <!-- Language-to-action -->
+            <tr onmouseout="lang_stop()" onmouseover="lang_start()">
+              <td style="padding:16px;width:25%;vertical-align:middle">
+                <div class="one">
+                  <div class="two" id="lang_image"><img src="images/lang_retarget.png" width="160" height="160" style="object-fit:cover"></div>
+                  <img src="images/lang_workspace.png" width="160" height="160" style="object-fit:cover">
+                </div>
+                <script type="text/javascript">
+                  function lang_start() { document.getElementById('lang_image').style.opacity = "1"; }
+                  function lang_stop()  { document.getElementById('lang_image').style.opacity = "0"; }
+                  lang_stop()
+                </script>
+              </td>
+              <td style="padding:8px;width:75%;vertical-align:middle">
+                <span class="papertitle">Language-Conditioned Manipulation with Diffusion and CVAE Policies</span>
+                <br>
+                <strong>Jinglei Liang</strong>
+                <br>
+                <em>Technical Report</em>, 2026
+                <br>
+                <a href="https://github.com/liangjlei">code</a>
+                <p></p>
+                <p>
+                  Mapping free-form natural-language instructions to robot trajectories. I study two generative action policies &mdash; a conditional VAE and a
+                  diffusion policy &mdash; both conditioned on embeddings from a large multimodal language model, and pair them with a motion-retargeting stage
+                  that transfers human-demonstrated motions onto the robot. The result executes language commands end-to-end on a real arm.
+                </p>
+              </td>
+            </tr>
+
+            <!-- Hand-eye calibration -->
+            <tr onmouseout="calib_stop()" onmouseover="calib_start()">
+              <td style="padding:16px;width:25%;vertical-align:middle">
+                <div class="one">
+                  <div class="two" id="calib_image"><img src="images/calib_hand.png" width="160" height="160" style="object-fit:cover"></div>
+                  <img src="images/calib_base.png" width="160" height="160" style="object-fit:cover">
+                </div>
+                <script type="text/javascript">
+                  function calib_start() { document.getElementById('calib_image').style.opacity = "1"; }
+                  function calib_stop()  { document.getElementById('calib_image').style.opacity = "0"; }
+                  calib_stop()
+                </script>
+              </td>
+              <td style="padding:8px;width:75%;vertical-align:middle">
+                <span class="papertitle">A Minimal, Reproducible Toolkit for Robot Hand&ndash;Eye Calibration</span>
+                <br>
+                <strong>Jinglei Liang</strong>
+                <br>
+                <em>Open-source toolkit</em>, 2026
+                <br>
+                <a href="https://github.com/liangjlei">code</a>
+                <p></p>
+                <p>
+                  A compact end-to-end implementation of camera intrinsics and hand&ndash;eye extrinsics calibration, covering both eye-on-base (fixed, third-person)
+                  and eye-on-hand (wrist-mounted) configurations via the classic AX&nbsp;=&nbsp;YB formulation. A real-time 3D viewer overlays the estimated camera pose
+                  on the robot model, making it easy to port any camera-plus-arm setup and verify the result at a glance.
+                </p>
+              </td>
+            </tr>
+
+            <!-- Color recognition -->
+            <tr onmouseout="color_stop()" onmouseover="color_start()">
+              <td style="padding:16px;width:25%;vertical-align:middle">
+                <div class="one">
+                  <div class="two" id="color_image"><img src="images/color_orange.png" width="160" height="160" style="object-fit:cover"></div>
+                  <img src="images/color_green.png" width="160" height="160" style="object-fit:cover">
+                </div>
+                <script type="text/javascript">
+                  function color_start() { document.getElementById('color_image').style.opacity = "1"; }
+                  function color_stop()  { document.getElementById('color_image').style.opacity = "0"; }
+                  color_stop()
+                </script>
+              </td>
+              <td style="padding:8px;width:75%;vertical-align:middle">
+                <span class="papertitle">Robust Object Color Recognition under Specular Highlights</span>
+                <br>
+                <strong>Jinglei Liang</strong>
+                <br>
+                <em>Technical Report</em>, 2026
+                <br>
+                <a href="https://github.com/liangjlei">code</a>
+                <p></p>
+                <p>
+                  A real-time perception module that localizes a target object with Hough-circle detection and names its color from the dominant hue in HSV space.
+                  Specular-highlight rejection and a median-band sampling scheme keep the estimate stable under glare, and temporal debouncing suppresses flicker
+                  before the color label is published to downstream tasks.
+                </p>
+              </td>
+            </tr>
+
+          </tbody></table>
+
+          <!-- ============ FOOTER ============ -->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+              <td style="padding:0px">
+                <br>
+                <p style="text-align:right;font-size:small;">
+                  Template based on <a href="https://github.com/jonbarron/jonbarron_website">Jon Barron's website</a>.
+                </p>
+              </td>
+            </tr>
+          </tbody></table>
+
+        </td>
+      </tr>
+    </tbody></table>
   </body>
 </html>
