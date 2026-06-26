@@ -429,6 +429,31 @@ span.hl {
 }
 
 /* ===================== RESULTS TABLE ===================== */
+/* ---------- Demo video ---------- */
+.demo-figure {
+  margin: 1.6rem 0 0;
+}
+.demo-video {
+  display: block;
+  width: 100%;
+  max-width: 760px;
+  aspect-ratio: 16 / 9;
+  background: #0d1622;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 8px 28px rgba(26, 43, 64, 0.14);
+}
+.demo-caption {
+  margin-top: 0.7rem;
+  max-width: 760px;
+  font-size: 0.86rem;
+  color: var(--ink-faint);
+  text-align: center;
+}
+.demo-caption a {
+  color: var(--accent);
+}
+
 .results-table {
   width: 100%;
   border-collapse: collapse;
