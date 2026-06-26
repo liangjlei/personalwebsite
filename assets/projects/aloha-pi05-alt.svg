@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" font-family="'Inter','Helvetica Neue',Arial,sans-serif">
+  <rect width="600" height="450" fill="#ffffff"/>
+  <rect x="0" y="0" width="600" height="6" fill="#1f3a5f"/>
+  <text x="30" y="44" fill="#1a2b40" font-size="21" font-weight="700">Aloha π0.5 LeRobot — At a Glance</text>
+  <text x="30" y="66" fill="#7a7a7a" font-size="13">real-robot manipulation: demonstration → policy → closed-loop</text>
+  <g>
+    <rect x="30"  y="92"  width="262" height="150" rx="12" fill="#eef2f7" stroke="#1f3a5f" stroke-width="1.4"/>
+    <rect x="308" y="92"  width="262" height="150" rx="12" fill="#eef2f7" stroke="#1f3a5f" stroke-width="1.4"/>
+    <rect x="30"  y="258" width="262" height="150" rx="12" fill="#eef2f7" stroke="#1f3a5f" stroke-width="1.4"/>
+    <rect x="308" y="258" width="262" height="150" rx="12" fill="#eef2f7" stroke="#1f3a5f" stroke-width="1.4"/>
+  </g>
+  <text x="161" y="166" fill="#1f3a5f" font-size="38" font-weight="800" text-anchor="middle">4-machine</text>
+  <text x="161" y="206" fill="#5a5a5a" font-size="14" text-anchor="middle">AlohaMini · Orin · A100 · 4090</text>
+  <text x="439" y="166" fill="#1f3a5f" font-size="38" font-weight="800" text-anchor="middle">π0.5 VLA</text>
+  <text x="439" y="206" fill="#5a5a5a" font-size="14" text-anchor="middle">bf16 + grad checkpointing</text>
+  <text x="161" y="332" fill="#1f3a5f" font-size="38" font-weight="800" text-anchor="middle">remote</text>
+  <text x="161" y="372" fill="#5a5a5a" font-size="14" text-anchor="middle">4090 policy server (gRPC)</text>
+  <text x="439" y="332" fill="#1f3a5f" font-size="38" font-weight="800" text-anchor="middle">safety</text>
+  <text x="439" y="372" fill="#5a5a5a" font-size="14" text-anchor="middle">watchdog + limit clamping</text>
+</svg>
