@@ -6,7 +6,7 @@
     <title>Jinglei Liang | Embodied AI</title>
     <meta
       name="description"
-      content="Jinglei Liang — Embodied AI engineer working on robot perception, speech interaction, and vision-language-action models."
+      content="Jinglei Liang — M.Sc. student at CUHK working on embodied AI: vision–language–action models, world models, and reinforcement learning for robot manipulation."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -45,21 +45,25 @@
               Embodied AI &middot; M.Sc. Student, CUHK
             </p>
             <p class="lead">
-              I am currently pursuing an M.Sc. in Computer Science and
-              Technology at
-              <strong>The Chinese University of Hong Kong</strong>.
+              I am an M.Sc. student in Computer Science at
+              <strong>The Chinese University of Hong Kong (CUHK)</strong>,
+              where I work on embodied intelligence. I received my B.Eng. in
+              Computer Science from
+              <strong>Sun Yat-sen University (SYSU)</strong>.
             </p>
             <p class="lead">
-              I build the perception and interaction stack that lets robots
-              <em>hear</em>, <em>understand</em>, and <em>act</em> in the
-              physical world. My work spans streaming speech recognition,
-              multimodal grounding, vision&ndash;language&ndash;action (VLA)
-              models, and the systems engineering that ties them together on
-              real hardware.
+              My research interest lies in
+              <strong>vision&ndash;language&ndash;action (VLA) models</strong>
+              and <strong>world&nbsp;&amp;&nbsp;action models (WAM)</strong>
+              &mdash; end-to-end embodied policies that learn to perceive,
+              reason, and act in the physical world. I am particularly
+              concerned with closing the perception&ndash;manipulation loop,
+              marrying large multimodal models with reinforcement learning for
+              robust closed-loop control on real robot hardware.
             </p>
             <p class="lead">
-              Most recently I led the on-device speech &amp; manipulation
-              pipeline for a live human&ndash;robot interaction demo, reaching
+              Most recently, I led the on-device speech &amp; manipulation
+              pipeline for a live human&ndash;robot interaction demo, attaining
               <strong>95%+ intent accuracy</strong> and an
               <strong>80.4% place success rate</strong> across 110+ on-robot
               trials.
@@ -100,32 +104,35 @@
         <h2 class="section-title">Research Interests</h2>
         <div class="interests">
           <div class="interest">
-            <h3>Robot Speech Interaction</h3>
+            <h3>Vision&ndash;Language&ndash;Action Models</h3>
             <p>
-              Real-time streaming ASR, voice activity detection, endpointing,
-              and intent understanding for noisy far-field human&ndash;robot
-              dialogue.
+              Parameter-efficient fine-tuning, instruction grounding, and
+              evaluation of VLA policies that map natural-language commands to
+              continuous, long-horizon control.
             </p>
           </div>
           <div class="interest">
-            <h3>Multimodal Perception</h3>
+            <h3>World &amp; Action Models</h3>
             <p>
-              VLM + open-vocabulary segmentation for object grounding, grasp
-              verification, and language-conditioned manipulation.
+              Learned predictive models of environment dynamics &mdash; using
+              world models for planning, action proposal, and sample-efficient
+              policy learning under partial observability.
             </p>
           </div>
           <div class="interest">
-            <h3>Vision&ndash;Language&ndash;Action</h3>
+            <h3>Reinforcement Learning</h3>
             <p>
-              Parameter-efficient fine-tuning and evaluation of VLA policies
-              that map natural-language instructions to continuous control.
+              Closed-loop manipulation policies, reward design, and
+              sim-to-real transfer; combining RL with imitation and
+              model-based rollouts for robust on-robot behaviour.
             </p>
           </div>
           <div class="interest">
-            <h3>Robotics Systems</h3>
+            <h3>Multimodal Perception &amp; Systems</h3>
             <p>
-              ROS2 pipelines, state-machine orchestration, camera calibration,
-              and the engineering discipline that keeps live demos stable.
+              VLM grounding, open-vocabulary segmentation, hand&ndash;eye
+              calibration, and the ROS2 / state-machine engineering that keeps
+              embodied pipelines stable in live deployment.
             </p>
           </div>
         </div>
@@ -186,250 +193,328 @@
           <span class="hl">highlighted</span>. Each links to a full write-up.
         </p>
 
-        <article class="project highlight">
-          <div class="project-thumb">
-            <img class="frame-a" src="./assets/projects/perception-pipeline.svg" alt="On-device perception pipeline diagram" />
-              <img class="frame-b" src="./assets/projects/perception-pipeline-alt.svg" alt="" aria-hidden="true" />
-          </div>
-          <div class="project-body">
-            <h3>Streaming Multimodal Speech Grounding for Real-Time Human&ndash;Robot Interaction</h3>
-            <p class="pub-authors"><strong>Jinglei Liang</strong></p>
-            <p class="pub-venue"><em>Technical Report</em>, 2026</p>
-            <p>
-              An end-to-end voice-to-action stack for service robots:
-              <span class="mono"
-                >mic&nbsp;PCM &rarr; VAD &rarr; ASR &rarr; NLU &rarr; VLM/SAM &rarr;
-                motion&nbsp;planner &rarr; TTS</span
-              >, fully decoupled as ROS2 nodes under a state-machine
-              orchestrator. I rebuilt the streaming-ASR path (stable
-              150&ndash;300&nbsp;ms partials), designed a three-stage
-              voice-activity gate that cut inference compute by <strong>86%</strong>
-              and tripled far-field recall, and moved color grounding from HSV
-              heuristics into the vision&ndash;language stage to eliminate
-              referent mis-rejections.
-            </p>
-            <p class="project-links">
-              <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/multimodal-speech-grounding">project page</a>
-              &middot;
-              <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/multimodal-speech-grounding#readme">report</a>
-            </p>
-          </div>
-        </article>
+        <table class="paper-table">
+          <tbody>
+            <tr
+              class="paper highlight"
+              onmouseover="ppg_start()" onmouseout="ppg_stop()"
+            >
+              <td class="paper-thumb">
+                <div class="one">
+                  <div class="two" id="ppg_image">
+                    <img class="frame-a" src="./assets/projects/perception-pipeline-alt.svg" alt="" aria-hidden="true" />
+                  </div>
+                  <img class="frame-b" src="./assets/projects/perception-pipeline.svg" alt="On-device perception pipeline diagram" />
+                </div>
+                <script type="text/javascript">
+                  function ppg_start() { document.getElementById('ppg_image').style.opacity = "1"; }
+                  function ppg_stop()  { document.getElementById('ppg_image').style.opacity = "0"; }
+                  ppg_stop()
+                </script>
+              </td>
+              <td class="paper-body">
+                <span class="papertitle">Streaming Multimodal Speech Grounding for Real-Time Human&ndash;Robot Interaction</span>
+                <br />
+                <span class="pub-authors">Jinglei Liang</span>
+                <br />
+                <em class="pub-venue">Technical Report</em>, 2026
+                <br />
+                <span class="project-links">
+                  <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/multimodal-speech-grounding">project page</a>
+                  /
+                  <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/multimodal-speech-grounding#readme">report</a>
+                </span>
+                <p>
+                  An end-to-end voice-to-action stack for service robots:
+                  <span class="mono">mic&nbsp;PCM &rarr; VAD &rarr; ASR &rarr; NLU &rarr; VLM/SAM &rarr; motion&nbsp;planner &rarr; TTS</span>,
+                  fully decoupled as ROS2 nodes under a state-machine orchestrator. I rebuilt the streaming-ASR path (stable 150&ndash;300&nbsp;ms partials), designed a three-stage voice-activity gate that cut inference compute by <strong>86%</strong> and tripled far-field recall, and moved color grounding from HSV heuristics into the vision&ndash;language stage to eliminate referent mis-rejections.
+                </p>
+              </td>
+            </tr>
 
-        <article class="project highlight">
-          <div class="project-thumb">
-            <img class="frame-a" src="./assets/projects/pi05-libero.svg" alt="Vision-language-action fine-tuning results" />
-              <img class="frame-b" src="./assets/projects/pi05-libero-alt.svg" alt="" aria-hidden="true" />
-          </div>
-          <div class="project-body">
-            <h3>Parameter-Efficient Adaptation of Vision&ndash;Language&ndash;Action Policies for Long-Horizon Manipulation</h3>
-            <p class="pub-authors"><strong>Jinglei Liang</strong></p>
-            <p class="pub-venue"><em>Preprint</em>, 2026</p>
-            <p>
-              A five-component recipe for parameter-efficient VLA adaptation:
-              selective LoRA placement, LLM-based instruction augmentation,
-              test-time action-chunk fusion, EMA weight averaging, and
-              failure-case resampling. Together they lift mean success from
-              92.2% to <strong>94.2%</strong> and the long-horizon split to
-              <strong>88.8%</strong> (+3.6&nbsp;pt over the official checkpoint),
-              while cutting flow-matching loss by 80% over 2,000 evaluation
-              episodes.
-            </p>
-            <p class="project-links">
-              <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/vla-parameter-efficient-adaptation">project page</a>
-              &middot;
-              <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/vla-parameter-efficient-adaptation#readme">report</a>
-            </p>
-          </div>
-        </article>
+            <tr
+              class="paper highlight"
+              onmouseover="vla_start()" onmouseout="vla_stop()"
+            >
+              <td class="paper-thumb">
+                <div class="one">
+                  <div class="two" id="vla_image">
+                    <img class="frame-a" src="./assets/projects/pi05-libero-alt.svg" alt="" aria-hidden="true" />
+                  </div>
+                  <img class="frame-b" src="./assets/projects/pi05-libero.svg" alt="Vision-language-action fine-tuning results" />
+                </div>
+                <script type="text/javascript">
+                  function vla_start() { document.getElementById('vla_image').style.opacity = "1"; }
+                  function vla_stop()  { document.getElementById('vla_image').style.opacity = "0"; }
+                  vla_stop()
+                </script>
+              </td>
+              <td class="paper-body">
+                <span class="papertitle">Parameter-Efficient Adaptation of Vision&ndash;Language&ndash;Action Policies for Long-Horizon Manipulation</span>
+                <br />
+                <span class="pub-authors">Jinglei Liang</span>
+                <br />
+                <em class="pub-venue">Preprint</em>, 2026
+                <br />
+                <span class="project-links">
+                  <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/vla-parameter-efficient-adaptation">project page</a>
+                  /
+                  <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/vla-parameter-efficient-adaptation#readme">report</a>
+                </span>
+                <p>
+                  A five-component recipe for parameter-efficient VLA adaptation: selective LoRA placement, LLM-based instruction augmentation, test-time action-chunk fusion, EMA weight averaging, and failure-case resampling. Together they lift mean success from 92.2% to <strong>94.2%</strong> and the long-horizon split to <strong>88.8%</strong> (+3.6&nbsp;pt over the official checkpoint), while cutting flow-matching loss by 80% over 2,000 evaluation episodes.
+                </p>
+              </td>
+            </tr>
 
-        <article class="project highlight">
-          <div class="project-thumb">
-            <img class="frame-a" src="./assets/projects/aloha-pi05.svg" alt="Aloha Pi0.5 LeRobot split-stack pipeline diagram" />
-              <img class="frame-b" src="./assets/projects/aloha-pi05-alt.svg" alt="" aria-hidden="true" />
-          </div>
-          <div class="project-body">
-            <h3>Aloha &pi;0.5 LeRobot: A Split-Stack Pipeline for Real-Robot Teleoperation, Training, and Remote Inference</h3>
-            <p class="pub-authors"><strong>Jinglei Liang</strong></p>
-            <p class="pub-venue"><em>Open-source system</em>, 2026</p>
-            <p>
-              An end-to-end real-robot learning stack that adapts Hugging Face
-              LeRobot into a distributed Aloha manipulation pipeline. AlohaMini
-              leader arms drive bimanual teleoperation; multi-camera
-              demonstrations are recorded, cleaned, and merged in LeRobot
-              format; <strong>&pi;0.5</strong> vision&ndash;language&ndash;action
-              policies are fine-tuned on an A100 (bf16 + gradient
-              checkpointing); and large checkpoints are served from a remote
-              <strong>RTX&nbsp;4090</strong> while the <strong>Orin</strong>
-              robot host keeps camera capture, action validation, watchdogs, and
-              a safety gate close to the hardware over a closed-loop gRPC link.
-            </p>
-            <p class="project-links">
-              <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/aloha-pi05-lerobot">project page</a>
-              &middot;
-              <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/aloha-pi05-lerobot#readme">code</a>
-              &middot;
-              <a href="https://github.com/liangjlei/personalwebsite/blob/main/assets/demo/aloha_pi05_demo.mp4">demo video</a>
-            </p>
-          </div>
-        </article>
+            <tr
+              class="paper highlight"
+              onmouseover="alo_start()" onmouseout="alo_stop()"
+            >
+              <td class="paper-thumb">
+                <div class="one">
+                  <div class="two" id="alo_image">
+                    <img class="frame-a" src="./assets/projects/aloha-pi05-alt.svg" alt="" aria-hidden="true" />
+                  </div>
+                  <img class="frame-b" src="./assets/projects/aloha-pi05.svg" alt="Aloha Pi0.5 LeRobot split-stack pipeline diagram" />
+                </div>
+                <script type="text/javascript">
+                  function alo_start() { document.getElementById('alo_image').style.opacity = "1"; }
+                  function alo_stop()  { document.getElementById('alo_image').style.opacity = "0"; }
+                  alo_stop()
+                </script>
+              </td>
+              <td class="paper-body">
+                <span class="papertitle">Aloha &pi;0.5 LeRobot: A Split-Stack Pipeline for Real-Robot Teleoperation, Training, and Remote Inference</span>
+                <br />
+                <span class="pub-authors">Jinglei Liang</span>
+                <br />
+                <em class="pub-venue">Open-source system</em>, 2026
+                <br />
+                <span class="project-links">
+                  <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/aloha-pi05-lerobot">project page</a>
+                  /
+                  <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/aloha-pi05-lerobot#readme">code</a>
+                  /
+                  <a href="https://github.com/liangjlei/personalwebsite/blob/main/assets/demo/aloha_pi05_demo.mp4">demo video</a>
+                </span>
+                <p>
+                  An end-to-end real-robot learning stack that adapts Hugging Face LeRobot into a distributed Aloha manipulation pipeline. AlohaMini leader arms drive bimanual teleoperation; multi-camera demonstrations are recorded, cleaned, and merged in LeRobot format; <strong>&pi;0.5</strong> vision&ndash;language&ndash;action policies are fine-tuned on an A100 (bf16 + gradient checkpointing); and large checkpoints are served from a remote <strong>RTX&nbsp;4090</strong> while the <strong>Orin</strong> robot host keeps camera capture, action validation, watchdogs, and a safety gate close to the hardware over a closed-loop gRPC link.
+                </p>
+              </td>
+            </tr>
 
-        <article class="project">
-          <div class="project-thumb">
-            <img class="frame-a" src="./assets/projects/teleop-retargeting.svg" alt="Transformer teleoperation retargeting" />
-              <img class="frame-b" src="./assets/projects/teleop-retargeting-alt.svg" alt="" aria-hidden="true" />
-          </div>
-          <div class="project-body">
-            <h3>Neural Motion Retargeting for Affective Whole-Body Teleoperation</h3>
-            <p class="pub-authors"><strong>Jinglei Liang</strong></p>
-            <p class="pub-venue"><em>Technical Report</em>, 2026</p>
-            <p>
-              A &ldquo;perceive&nbsp;&rarr; infer&nbsp;affect&nbsp;&rarr;
-              generate&nbsp;motion&nbsp;&rarr; drive&nbsp;hardware&rdquo;
-              interaction system. I replaced analytic IK with T-pose calibration
-              by a 4-layer Transformer retargeting model (1.0&nbsp;M params,
-              60-D&nbsp;IMU &rarr; 10-D encoding), markedly improving motion
-              smoothness and robustness, and added a two-stage detection +
-              vision&ndash;language perception cascade that dropped per-frame
-              latency from 1.5&nbsp;s to ~920&nbsp;ms.
-            </p>
-            <p class="project-links">
-              <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/neural-motion-retargeting">project page</a>
-              &middot;
-              <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/neural-motion-retargeting#readme">report</a>
-            </p>
-          </div>
-        </article>
+            <tr
+              class="paper"
+              onmouseover="tlp_start()" onmouseout="tlp_stop()"
+            >
+              <td class="paper-thumb">
+                <div class="one">
+                  <div class="two" id="tlp_image">
+                    <img class="frame-a" src="./assets/projects/teleop-retargeting-alt.svg" alt="" aria-hidden="true" />
+                  </div>
+                  <img class="frame-b" src="./assets/projects/teleop-retargeting.svg" alt="Transformer teleoperation retargeting" />
+                </div>
+                <script type="text/javascript">
+                  function tlp_start() { document.getElementById('tlp_image').style.opacity = "1"; }
+                  function tlp_stop()  { document.getElementById('tlp_image').style.opacity = "0"; }
+                  tlp_stop()
+                </script>
+              </td>
+              <td class="paper-body">
+                <span class="papertitle">Neural Motion Retargeting for Affective Whole-Body Teleoperation</span>
+                <br />
+                <span class="pub-authors">Jinglei Liang</span>
+                <br />
+                <em class="pub-venue">Technical Report</em>, 2026
+                <br />
+                <span class="project-links">
+                  <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/neural-motion-retargeting">project page</a>
+                  /
+                  <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/neural-motion-retargeting#readme">report</a>
+                </span>
+                <p>
+                  A &ldquo;perceive &rarr; infer affect &rarr; generate motion &rarr; drive hardware&rdquo; interaction system. I replaced analytic IK with T-pose calibration by a 4-layer Transformer retargeting model (1.0&nbsp;M params, 60-D&nbsp;IMU &rarr; 10-D encoding), markedly improving motion smoothness and robustness, and added a two-stage detection + vision&ndash;language perception cascade that dropped per-frame latency from 1.5&nbsp;s to ~920&nbsp;ms.
+                </p>
+              </td>
+            </tr>
 
-        <article class="project">
-          <div class="project-thumb">
-            <img class="frame-a" src="./assets/projects/asd-survey.svg" alt="Active speaker detection study" />
-              <img class="frame-b" src="./assets/projects/asd-survey-alt.svg" alt="" aria-hidden="true" />
-          </div>
-          <div class="project-body">
-            <h3>A Comparative Study of Audio&ndash;Visual Active Speaker Detection in Unconstrained Scenes</h3>
-            <p class="pub-authors"><strong>Jinglei Liang</strong></p>
-            <p class="pub-venue"><em>Survey / Technical Report</em>, 2026</p>
-            <p>
-              A coarse-to-fine comparison of three audio&ndash;visual paradigms
-              &mdash; semantic audio&ndash;visual segmentation, audio&ndash;visual
-              instance segmentation, and active speaker detection &mdash; for the
-              &ldquo;who is speaking to me&rdquo; problem in crowded scenes. I
-              reproduced and benchmarked all three and selected a two-stage
-              detect&nbsp;&rarr;&nbsp;track&nbsp;&rarr;&nbsp;ASD pipeline
-              (model&nbsp;&lt;&nbsp;20&nbsp;MB, real-time) along task alignment,
-              accuracy, latency, and deployability.
-            </p>
-            <p class="project-links">
-              <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/audio-visual-active-speaker-detection">project page</a>
-              &middot;
-              <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/audio-visual-active-speaker-detection#readme">report</a>
-            </p>
-          </div>
-        </article>
+            <tr
+              class="paper"
+              onmouseover="asd_start()" onmouseout="asd_stop()"
+            >
+              <td class="paper-thumb">
+                <div class="one">
+                  <div class="two" id="asd_image">
+                    <img class="frame-a" src="./assets/projects/asd-survey-alt.svg" alt="" aria-hidden="true" />
+                  </div>
+                  <img class="frame-b" src="./assets/projects/asd-survey.svg" alt="Active speaker detection study" />
+                </div>
+                <script type="text/javascript">
+                  function asd_start() { document.getElementById('asd_image').style.opacity = "1"; }
+                  function asd_stop()  { document.getElementById('asd_image').style.opacity = "0"; }
+                  asd_stop()
+                </script>
+              </td>
+              <td class="paper-body">
+                <span class="papertitle">A Comparative Study of Audio&ndash;Visual Active Speaker Detection in Unconstrained Scenes</span>
+                <br />
+                <span class="pub-authors">Jinglei Liang</span>
+                <br />
+                <em class="pub-venue">Survey / Technical Report</em>, 2026
+                <br />
+                <span class="project-links">
+                  <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/audio-visual-active-speaker-detection">project page</a>
+                  /
+                  <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/audio-visual-active-speaker-detection#readme">report</a>
+                </span>
+                <p>
+                  A coarse-to-fine comparison of three audio&ndash;visual paradigms &mdash; semantic audio&ndash;visual segmentation, audio&ndash;visual instance segmentation, and active speaker detection &mdash; for the &ldquo;who is speaking to me&rdquo; problem in crowded scenes. I reproduced and benchmarked all three and selected a two-stage detect&nbsp;&rarr;&nbsp;track&nbsp;&rarr;&nbsp;ASD pipeline (model&nbsp;&lt;&nbsp;20&nbsp;MB, real-time) along task alignment, accuracy, latency, and deployability.
+                </p>
+              </td>
+            </tr>
 
-        <article class="project">
-          <div class="project-thumb">
-            <img class="frame-a" src="./assets/projects/calibration.svg" alt="Robot hand-eye calibration" />
-              <img class="frame-b" src="./assets/projects/calibration-alt.svg" alt="" aria-hidden="true" />
-          </div>
-          <div class="project-body">
-            <h3>Robust Hand&ndash;Eye Calibration via SE(3) Maximum-Likelihood Estimation</h3>
-            <p class="pub-authors"><strong>Jinglei Liang</strong></p>
-            <p class="pub-venue"><em>Open-source toolkit</em>, 2026</p>
-            <p>
-              A standardized hand&ndash;eye calibration pipeline (AprilTag
-              36h11, maximum-likelihood estimation with Gauss&ndash;Newton on
-              SE(3) under a Huber robust loss, millimeter-level residuals) plus a
-              reusable intrinsics procedure covering both eye-on-base and
-              eye-on-hand configurations. The toolkit drove a long-running
-              automated assembly demonstration with <strong>20/20</strong>
-              consecutive successful runs across <strong>10+ public showings</strong>.
-            </p>
-            <p class="project-links">
-              <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/robust-hand-eye-calibration">project page</a>
-              &middot;
-              <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/robust-hand-eye-calibration#readme">guide</a>
-            </p>
-          </div>
-        </article>
+            <tr
+              class="paper"
+              onmouseover="hec_start()" onmouseout="hec_stop()"
+            >
+              <td class="paper-thumb">
+                <div class="one">
+                  <div class="two" id="hec_image">
+                    <img class="frame-a" src="./assets/projects/calibration-alt.svg" alt="" aria-hidden="true" />
+                  </div>
+                  <img class="frame-b" src="./assets/projects/calibration.svg" alt="Robot hand-eye calibration" />
+                </div>
+                <script type="text/javascript">
+                  function hec_start() { document.getElementById('hec_image').style.opacity = "1"; }
+                  function hec_stop()  { document.getElementById('hec_image').style.opacity = "0"; }
+                  hec_stop()
+                </script>
+              </td>
+              <td class="paper-body">
+                <span class="papertitle">Robust Hand&ndash;Eye Calibration via SE(3) Maximum-Likelihood Estimation</span>
+                <br />
+                <span class="pub-authors">Jinglei Liang</span>
+                <br />
+                <em class="pub-venue">Open-source toolkit</em>, 2026
+                <br />
+                <span class="project-links">
+                  <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/robust-hand-eye-calibration">project page</a>
+                  /
+                  <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/robust-hand-eye-calibration#readme">guide</a>
+                </span>
+                <p>
+                  A standardized hand&ndash;eye calibration pipeline (AprilTag 36h11, maximum-likelihood estimation with Gauss&ndash;Newton on SE(3) under a Huber robust loss, millimeter-level residuals) plus a reusable intrinsics procedure covering both eye-on-base and eye-on-hand configurations. The toolkit drove a long-running automated assembly demonstration with <strong>20/20</strong> consecutive successful runs across <strong>10+ public showings</strong>.
+                </p>
+              </td>
+            </tr>
 
-        <article class="project">
-          <div class="project-thumb">
-            <img class="frame-a" src="./assets/projects/agent-platform.svg" alt="Multi-tenant LLM agent control plane diagram" />
-              <img class="frame-b" src="./assets/projects/agent-platform-alt.svg" alt="" aria-hidden="true" />
-          </div>
-          <div class="project-body">
-            <h3>A Multi-Tenant Control Plane for Orchestrating Large Language Model Agents</h3>
-            <p class="pub-authors"><strong>Jinglei Liang</strong></p>
-            <p class="pub-venue"><em>Systems Report</em>, 2026</p>
-            <p>
-              A control plane that turns a bare agent runtime into a team-ready
-              platform. I built the orchestration layer (Hono&nbsp;+&nbsp;SQLite):
-              multi-user auth (API&nbsp;key&nbsp;/&nbsp;OIDC) with audit logging, a
-              <strong>unified streaming <span class="mono">invoke()</span></strong>
-              routing across four model families behind one API, and
-              <strong>per-tenant isolation</strong> of skills, knowledge, and
-              shared memory, bridged to repository sync and webhooks for
-              end-to-end delivery.
-            </p>
-            <p class="project-links">
-              <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/llm-agent-control-plane">project page</a>
-              &middot;
-              <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/llm-agent-control-plane#readme">overview</a>
-            </p>
-          </div>
-        </article>
+            <tr
+              class="paper"
+              onmouseover="acp_start()" onmouseout="acp_stop()"
+            >
+              <td class="paper-thumb">
+                <div class="one">
+                  <div class="two" id="acp_image">
+                    <img class="frame-a" src="./assets/projects/agent-platform-alt.svg" alt="" aria-hidden="true" />
+                  </div>
+                  <img class="frame-b" src="./assets/projects/agent-platform.svg" alt="Multi-tenant LLM agent control plane diagram" />
+                </div>
+                <script type="text/javascript">
+                  function acp_start() { document.getElementById('acp_image').style.opacity = "1"; }
+                  function acp_stop()  { document.getElementById('acp_image').style.opacity = "0"; }
+                  acp_stop()
+                </script>
+              </td>
+              <td class="paper-body">
+                <span class="papertitle">A Multi-Tenant Control Plane for Orchestrating Large Language Model Agents</span>
+                <br />
+                <span class="pub-authors">Jinglei Liang</span>
+                <br />
+                <em class="pub-venue">Systems Report</em>, 2026
+                <br />
+                <span class="project-links">
+                  <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/llm-agent-control-plane">project page</a>
+                  /
+                  <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/llm-agent-control-plane#readme">overview</a>
+                </span>
+                <p>
+                  A control plane that turns a bare agent runtime into a team-ready platform. I built the orchestration layer (Hono&nbsp;+&nbsp;SQLite): multi-user auth (API&nbsp;key&nbsp;/&nbsp;OIDC) with audit logging, a <strong>unified streaming <span class="mono">invoke()</span></strong> routing across four model families behind one API, and <strong>per-tenant isolation</strong> of skills, knowledge, and shared memory, bridged to repository sync and webhooks for end-to-end delivery.
+                </p>
+              </td>
+            </tr>
 
-        <article class="project">
-          <div class="project-thumb">
-            <img class="frame-a" src="./assets/projects/agent-network.svg" alt="Internet of agents connector diagram" />
-              <img class="frame-b" src="./assets/projects/agent-network-alt.svg" alt="" aria-hidden="true" />
-          </div>
-          <div class="project-body">
-            <h3>Toward an Internet of Agents: Structured Tool Connectors for Autonomous Catalog Reasoning</h3>
-            <p class="pub-authors"><strong>Jinglei Liang</strong></p>
-            <p class="pub-venue"><em>Open-source project</em>, 2026</p>
-            <p>
-              A lightweight connector layer that lets autonomous agents query an
-              external catalog through a single structured protocol. Agents fetch
-              item details, search, and inventory via a brand-agnostic JSON API
-              with rate-limited, retry-safe access &mdash; turning an opaque
-              third-party data source into a typed tool that planning and pricing
-              agents can call without bespoke integration code.
-            </p>
-            <p class="project-links">
-              <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/internet-of-agents-connectors">project page</a>
-              &middot;
-              <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/internet-of-agents-connectors#readme">code</a>
-            </p>
-          </div>
-        </article>
+            <tr
+              class="paper"
+              onmouseover="ioa_start()" onmouseout="ioa_stop()"
+            >
+              <td class="paper-thumb">
+                <div class="one">
+                  <div class="two" id="ioa_image">
+                    <img class="frame-a" src="./assets/projects/agent-network-alt.svg" alt="" aria-hidden="true" />
+                  </div>
+                  <img class="frame-b" src="./assets/projects/agent-network.svg" alt="Internet of agents connector diagram" />
+                </div>
+                <script type="text/javascript">
+                  function ioa_start() { document.getElementById('ioa_image').style.opacity = "1"; }
+                  function ioa_stop()  { document.getElementById('ioa_image').style.opacity = "0"; }
+                  ioa_stop()
+                </script>
+              </td>
+              <td class="paper-body">
+                <span class="papertitle">Toward an Internet of Agents: Structured Tool Connectors for Autonomous Catalog Reasoning</span>
+                <br />
+                <span class="pub-authors">Jinglei Liang</span>
+                <br />
+                <em class="pub-venue">Open-source project</em>, 2026
+                <br />
+                <span class="project-links">
+                  <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/internet-of-agents-connectors">project page</a>
+                  /
+                  <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/internet-of-agents-connectors#readme">code</a>
+                </span>
+                <p>
+                  A lightweight connector layer that lets autonomous agents query an external catalog through a single structured protocol. Agents fetch item details, search, and inventory via a brand-agnostic JSON API with rate-limited, retry-safe access &mdash; turning an opaque third-party data source into a typed tool that planning and pricing agents can call without bespoke integration code.
+                </p>
+              </td>
+            </tr>
 
-        <article class="project">
-          <div class="project-thumb">
-            <img class="frame-a" src="./assets/projects/llm-agent.svg" alt="General-purpose LLM agent loop diagram" />
-              <img class="frame-b" src="./assets/projects/llm-agent-alt.svg" alt="" aria-hidden="true" />
-          </div>
-          <div class="project-body">
-            <h3>Tool-Augmented General-Purpose Agents: Planning and Sandboxed Execution</h3>
-            <p class="pub-authors"><strong>Jinglei Liang</strong></p>
-            <p class="pub-venue"><em>Technical Note</em>, 2026</p>
-            <p>
-              A study and extension of a ReAct-style agent that plans, selects
-              tools, and executes them in a sandbox with a pluggable LLM backend.
-              I analyzed the planning&ndash;tool&ndash;observation loop, added and
-              evaluated custom tools, and used the framework as a testbed for how
-              general agents can drive the perception and robotics services in my
-              other projects.
-            </p>
-            <p class="project-links">
-              <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/tool-augmented-agents">project page</a>
-              &middot;
-              <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/tool-augmented-agents#readme">notes</a>
-            </p>
-          </div>
-        </article>
+            <tr
+              class="paper"
+              onmouseover="tag_start()" onmouseout="tag_stop()"
+            >
+              <td class="paper-thumb">
+                <div class="one">
+                  <div class="two" id="tag_image">
+                    <img class="frame-a" src="./assets/projects/llm-agent-alt.svg" alt="" aria-hidden="true" />
+                  </div>
+                  <img class="frame-b" src="./assets/projects/llm-agent.svg" alt="General-purpose LLM agent loop diagram" />
+                </div>
+                <script type="text/javascript">
+                  function tag_start() { document.getElementById('tag_image').style.opacity = "1"; }
+                  function tag_stop()  { document.getElementById('tag_image').style.opacity = "0"; }
+                  tag_stop()
+                </script>
+              </td>
+              <td class="paper-body">
+                <span class="papertitle">Tool-Augmented General-Purpose Agents: Planning and Sandboxed Execution</span>
+                <br />
+                <span class="pub-authors">Jinglei Liang</span>
+                <br />
+                <em class="pub-venue">Technical Note</em>, 2026
+                <br />
+                <span class="project-links">
+                  <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/tool-augmented-agents">project page</a>
+                  /
+                  <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/tool-augmented-agents#readme">notes</a>
+                </span>
+                <p>
+                  A study and extension of a ReAct-style agent that plans, selects tools, and executes them in a sandbox with a pluggable LLM backend. I analyzed the planning&ndash;tool&ndash;observation loop, added and evaluated custom tools, and used the framework as a testbed for how general agents can drive the perception and robotics services in my other projects.
+                </p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </section>
 
       <!-- ===================== SELECTED RESULTS (TABLE) ===================== -->

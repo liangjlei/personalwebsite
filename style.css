@@ -1,13 +1,13 @@
 /* ===================== TOKENS ===================== */
 :root {
-  --bg: #fbfaf8;
-  --surface: #ffffff;
-  --ink: #1a1a1a;
-  --ink-soft: #4a4a4a;
-  --ink-faint: #7a7a7a;
-  --line: #e6e3dd;
-  --accent: #1f3a5f; /* deep navy, echoing the portrait backdrop */
-  --accent-soft: #2f5380;
+  --bg: #ffffff;
+  --surface: #f6f7f9;
+  --ink: #1b1f24;
+  --ink-soft: #3f4a57;
+  --ink-faint: #6b7280;
+  --line: #e4e7ec;
+  --accent: #1f5fae; /* medium blue, legible on light */
+  --accent-soft: #2f6fb0;
   --max: 920px;
   --serif: "Newsreader", Georgia, "Times New Roman", serif;
   --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -19,6 +19,7 @@
 
 html {
   scroll-behavior: smooth;
+  color-scheme: light;
 }
 
 body {
@@ -55,7 +56,7 @@ strong {
   font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
   font-size: 0.86em;
   color: var(--accent-soft);
-  background: rgba(31, 58, 95, 0.05);
+  background: rgba(31, 95, 174, 0.1);
   padding: 0.1em 0.35em;
   border-radius: 4px;
 }
@@ -65,8 +66,8 @@ strong {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(251, 250, 248, 0.88);
-  backdrop-filter: saturate(180%) blur(10px);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: saturate(160%) blur(10px);
   border-bottom: 1px solid var(--line);
 }
 
@@ -159,7 +160,7 @@ strong {
   object-fit: cover;
   border-radius: 8px;
   border: 1px solid var(--line);
-  box-shadow: 0 8px 30px rgba(31, 58, 95, 0.12);
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.12);
 }
 
 .hero-text h1 {
@@ -206,7 +207,7 @@ strong {
 .contacts li a:hover {
   border-color: var(--accent);
   background: var(--accent);
-  color: #fff;
+  color: #ffffff;
 }
 
 .contacts-large {
@@ -277,81 +278,94 @@ strong {
   color: var(--ink-soft);
 }
 
-/* ===================== PROJECTS ===================== */
-.project {
-  display: grid;
-  grid-template-columns: 180px 1fr;
-  gap: 28px;
-  padding: 28px 0;
-  border-top: 1px solid var(--line);
+/* ===================== PROJECTS (Jon Barron-style paper table) ===================== */
+.paper-table {
+  width: 100%;
+  border: 0;
+  border-spacing: 0 14px;
+  border-collapse: separate;
+  table-layout: fixed;
 }
 
-.project:first-of-type {
-  border-top: none;
-  padding-top: 4px;
+.paper {
+  background: transparent;
 }
 
-.project-thumb {
+/* Highlighted rows (representative projects) get a soft tint,
+   in the spirit of Jon Barron's pale highlight rows. */
+.paper.highlight td {
+  background: rgba(31, 95, 174, 0.06);
+}
+
+.paper.highlight .paper-thumb {
+  border-radius: 10px 0 0 10px;
+}
+
+.paper.highlight .paper-body {
+  border-radius: 0 10px 10px 0;
+  padding-right: 18px;
+}
+
+.paper-thumb {
+  width: 180px;
+  padding: 4px 28px 4px 4px;
+  vertical-align: middle;
+}
+
+.paper-body {
+  width: auto;
+  padding: 8px 4px;
+  vertical-align: middle;
+}
+
+/* Jon Barron-style cross-fade thumbnail:
+   .one is the stacking context; .two is the top layer that
+   fades in on hover via inline onmouseover/onmouseout. */
+.one {
   position: relative;
-}
-
-.project-thumb img {
   width: 100%;
   aspect-ratio: 4 / 3;
+}
+
+.two {
+  position: absolute;
+  inset: 0;
+  transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -webkit-transition: opacity 0.2s ease-in-out;
+}
+
+.paper-thumb img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   border-radius: 6px;
   border: 1px solid var(--line);
-  background: #f0eee9;
-}
-
-/* Jon Barron-style hover: keep flipping between the two frames */
-.project-thumb .frame-b {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-}
-
-.project-thumb:hover .frame-b {
-  animation: thumb-flip 1.2s step-end infinite;
-}
-
-@keyframes thumb-flip {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
+  background: #eef0f3;
+  display: block;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .project-thumb:hover .frame-b {
-    animation: none;
-    opacity: 1;
+  .two {
+    transition: none;
   }
 }
 
-.project-body h3 {
+.papertitle {
   font-family: var(--serif);
-  font-size: 1.24rem;
-  font-weight: 600;
-  margin: 0 0 4px;
-  line-height: 1.25;
+  font-size: 1.16rem;
+  font-weight: 700;
+  color: var(--ink);
 }
 
-.project-meta {
-  color: var(--ink-faint);
-  font-size: 0.88rem;
-  margin: 0 0 10px;
-}
-
-.project-body p {
+.paper-body p {
   color: var(--ink-soft);
-  margin: 0 0 10px;
+  margin: 8px 0 0;
   font-size: 0.97rem;
 }
 
 .project-links {
+  display: inline;
   font-size: 0.9rem;
   color: var(--ink-faint);
 }
@@ -360,36 +374,22 @@ strong {
   font-weight: 500;
 }
 
-/* ---- Jon Barron-style academic paper list ---- */
+/* ---- academic paper metadata ---- */
 .pub-authors {
-  margin: 0;
   font-size: 0.95rem;
   color: var(--ink-soft);
 }
 
 .pub-venue {
-  margin: 0 0 10px;
   font-size: 0.9rem;
   color: var(--ink-faint);
 }
 
 span.hl {
-  background: #fdf3c4;
+  background: rgba(31, 95, 174, 0.12);
+  color: var(--accent-soft);
   padding: 0 3px;
   border-radius: 3px;
-}
-
-.project.highlight {
-  border-top: none;
-  background: #fffbe9;
-  border-radius: 10px;
-  padding: 22px;
-  margin: 10px 0;
-  align-items: center;
-}
-
-.project.highlight + .project {
-  border-top: none;
 }
 
 /* ===================== EDUCATION ===================== */
@@ -451,7 +451,7 @@ span.hl {
 }
 
 .results-table tbody tr:hover {
-  background: rgba(31, 58, 95, 0.03);
+  background: rgba(31, 95, 174, 0.06);
 }
 
 .results-table .num {
@@ -512,13 +512,32 @@ span.hl {
     grid-template-columns: 1fr;
   }
 
-  .project {
-    grid-template-columns: 1fr;
-    gap: 14px;
+  /* Stack the Jon Barron paper rows on narrow screens */
+  .paper-table,
+  .paper-table tbody,
+  .paper,
+  .paper-thumb,
+  .paper-body {
+    display: block;
+    width: auto;
   }
 
-  .project-thumb {
+  .paper {
+    margin-bottom: 22px;
+  }
+
+  .paper.highlight {
+    border-radius: 10px;
+    padding: 14px;
+  }
+
+  .paper-thumb {
     max-width: 240px;
+    padding: 0 0 14px;
+  }
+
+  .paper-body {
+    padding: 0;
   }
 
   .news li {
