@@ -87,6 +87,19 @@ to large-model closed-loop manipulation on real robots.
 
 ## System Overview
 
+<div align="center">
+
+![Aloha π0.5 LeRobot system architecture](../../assets/projects/aloha-pi05.svg)
+
+</div>
+
+**Figure 1.** End-to-end architecture in four stages: **(a)** AlohaMini
+teleoperation and LeRobot data collection, **(b)** π0.5 VLA fine-tuning on an
+A100 (frozen vision–language backbone + trained action expert, flow-matching
+loss), **(c)** remote closed-loop inference with the large policy served off-board
+on a 4090 while the Orin host stays real-time, and **(d)** the safety gate that
+clamps, validates, and rejects unsafe actions before they reach the robot.
+
 ```mermaid
 %%{init: {"theme": "base", "themeVariables": {"fontSize": "16px", "fontFamily": "Inter, ui-sans-serif, system-ui", "primaryTextColor": "#102033", "lineColor": "#6B7280"}, "flowchart": {"nodeSpacing": 38, "rankSpacing": 56, "curve": "basis"}}}%%
 flowchart LR

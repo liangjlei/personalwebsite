@@ -1,70 +1,168 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" font-family="'Inter','Helvetica Neue',Arial,sans-serif">
-  <rect width="600" height="450" fill="#ffffff"/>
-  <rect x="0" y="0" width="600" height="6" fill="#1f3a5f"/>
-  <text x="30" y="44" fill="#1a2b40" font-size="21" font-weight="700">Aloha π0.5 — Split-Stack Pipeline</text>
-  <text x="30" y="66" fill="#7a7a7a" font-size="13">teleop → dataset → A100 training → 4090 remote inference → Orin control</text>
-
-  <!-- pipeline nodes -->
-  <g font-size="13" text-anchor="middle">
-    <!-- AlohaMini -->
-    <rect x="28"  y="110" width="104" height="74" rx="10" fill="#e8f3ff" stroke="#2684ff" stroke-width="2"/>
-    <text x="80"  y="142" fill="#0b2545" font-weight="700">AlohaMini</text>
-    <text x="80"  y="162" fill="#0b2545" font-size="11">teleop leader</text>
-
-    <!-- Dataset -->
-    <rect x="160" y="110" width="104" height="74" rx="10" fill="#fff7e6" stroke="#ffb020" stroke-width="2"/>
-    <text x="212" y="142" fill="#4a2a00" font-weight="700">LeRobot</text>
-    <text x="212" y="162" fill="#4a2a00" font-size="11">dataset engine</text>
-
-    <!-- A100 -->
-    <rect x="292" y="110" width="104" height="74" rx="10" fill="#f4ecff" stroke="#7b61ff" stroke-width="2"/>
-    <text x="344" y="142" fill="#26114d" font-weight="700">A100</text>
-    <text x="344" y="162" fill="#26114d" font-size="11">π0.5 training</text>
-
-    <!-- 4090 -->
-    <rect x="424" y="110" width="104" height="74" rx="10" fill="#ffeaf6" stroke="#d946ef" stroke-width="2"/>
-    <text x="476" y="142" fill="#4a044e" font-weight="700">RTX 4090</text>
-    <text x="476" y="162" fill="#4a044e" font-size="11">remote infer</text>
-  </g>
-
-  <!-- arrows across top row -->
-  <g stroke="#9aa3ad" stroke-width="2" marker-end="url(#ah)">
-    <line x1="132" y1="147" x2="158" y2="147"/>
-    <line x1="264" y1="147" x2="290" y2="147"/>
-    <line x1="396" y1="147" x2="422" y2="147"/>
-  </g>
   <defs>
-    <marker id="ah" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-      <path d="M0,0 L6,3 L0,6 Z" fill="#9aa3ad"/>
-    </marker>
-    <marker id="ah2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto">
-      <path d="M0,0 L6,3 L0,6 Z" fill="#00a3a3"/>
-    </marker>
+    <linearGradient id="pg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#fbfcfe"/></linearGradient>
+    <filter id="ds" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="1.4" stdDeviation="1.8" flood-color="#1a2b40" flood-opacity="0.16"/></filter>
+    <marker id="m" markerWidth="8" markerHeight="8" refX="5.6" refY="2.8" orient="auto"><path d="M0,0 L5.6,2.8 L0,5.6 Z" fill="#46566a"/></marker>
+    <marker id="mt" markerWidth="8" markerHeight="8" refX="5.6" refY="2.8" orient="auto"><path d="M0,0 L5.6,2.8 L0,5.6 Z" fill="#0d9488"/></marker>
+    <marker id="mp" markerWidth="8" markerHeight="8" refX="5.6" refY="2.8" orient="auto"><path d="M0,0 L5.6,2.8 L0,5.6 Z" fill="#c026a6"/></marker>
+    <marker id="mg" markerWidth="8" markerHeight="8" refX="5.6" refY="2.8" orient="auto"><path d="M0,0 L5.6,2.8 L0,5.6 Z" fill="#12b76a"/></marker>
+    <!-- glyphs -->
+    <symbol id="frost" viewBox="0 0 20 20"><g stroke="#2f6fd0" stroke-width="1.6" stroke-linecap="round"><line x1="10" y1="2" x2="10" y2="18"/><line x1="3" y1="6" x2="17" y2="14"/><line x1="17" y1="6" x2="3" y2="14"/><g stroke-width="1.2"><line x1="10" y1="5" x2="7.5" y2="3"/><line x1="10" y1="5" x2="12.5" y2="3"/><line x1="10" y1="15" x2="7.5" y2="17"/><line x1="10" y1="15" x2="12.5" y2="17"/></g></g></symbol>
+    <symbol id="fire" viewBox="0 0 20 20"><path d="M10 2 C12 6 16 7 14.5 12 C14 15.5 11.5 17.5 10 17.5 C8.5 17.5 5.5 16 5.5 11.5 C5.5 8.5 8 8 7.5 5 C9 6 9 4 10 2 Z" fill="#e8852a"/><path d="M10 9 C11 11 11.5 12 11 13.5 C10.6 15 9.6 15.5 9 15.2 C8.2 14.8 8 13.8 8.6 12.5 C9 11.5 9.6 11 10 9 Z" fill="#ffd9a8"/></symbol>
+    <symbol id="cam" viewBox="0 0 24 18"><rect x="1" y="4" width="22" height="13" rx="2.5" fill="#cfe0f5" stroke="#2f6fd0" stroke-width="1.2"/><path d="M7 4 L9 1.5 H15 L17 4 Z" fill="#cfe0f5" stroke="#2f6fd0" stroke-width="1.2"/><circle cx="12" cy="10.5" r="4" fill="#ffffff" stroke="#2f6fd0" stroke-width="1.2"/><circle cx="12" cy="10.5" r="1.7" fill="#2f6fd0"/></symbol>
+    <symbol id="arm" viewBox="0 0 32 32"><g stroke="#0d9488" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="26" width="20" height="4" rx="1.5" fill="#cdeee8" stroke-width="1.6"/><path d="M16 26 L13 16 L22 11"/><path d="M22 11 L26 7"/></g><circle cx="16" cy="26" r="2.3" fill="#0d9488"/><circle cx="13" cy="16" r="2.1" fill="#0d9488"/><path d="M25 5 l4 0 m-2 -2 l0 4" stroke="#0d9488" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="grip" viewBox="0 0 24 24"><g stroke="#7a2674" stroke-width="2" fill="none" stroke-linecap="round"><line x1="12" y1="3" x2="12" y2="9"/><rect x="6" y="9" width="12" height="4" rx="1.5" fill="#f3d4ea" stroke-width="1.6"/><path d="M8 13 L7 21"/><path d="M16 13 L17 21"/></g></symbol>
   </defs>
 
-  <!-- Orin closed loop -->
-  <rect x="226" y="246" width="148" height="74" rx="10" fill="#e9fbf8" stroke="#00a3a3" stroke-width="2"/>
-  <text x="300" y="278" fill="#063b3b" font-size="13" font-weight="700" text-anchor="middle">Orin Robot Host</text>
-  <text x="300" y="298" fill="#063b3b" font-size="11" text-anchor="middle">cameras · IO · safety gate</text>
+  <rect width="600" height="450" fill="url(#pg)"/>
+  <rect x="0" y="0" width="600" height="6" fill="#1f3a5f"/>
 
-  <!-- action chunks back to Orin, observations up to 4090 -->
-  <g stroke="#00a3a3" stroke-width="2" marker-end="url(#ah2)">
-    <path d="M476,184 C476,240 400,250 376,272" fill="none"/>
-    <path d="M226,288 C150,290 80,240 80,186" fill="none"/>
-  </g>
-  <text x="455" y="226" fill="#0e7c7b" font-size="11">action chunks</text>
-  <text x="96"  y="226" fill="#0e7c7b" font-size="11" text-anchor="start">observations</text>
-
-  <!-- metrics strip -->
+  <!-- title + banner + legend -->
+  <text x="14" y="26" fill="#12233a" font-size="16" font-weight="800" letter-spacing="-0.2">Aloha&#160;&#960;0.5 LeRobot &#8212; Real-Robot VLA Pipeline</text>
   <g>
-    <rect x="30"  y="356" width="170" height="64" rx="10" fill="#eef2f7" stroke="#1f3a5f" stroke-width="1.3"/>
-    <rect x="215" y="356" width="170" height="64" rx="10" fill="#eef2f7" stroke="#1f3a5f" stroke-width="1.3"/>
-    <rect x="400" y="356" width="170" height="64" rx="10" fill="#eef2f7" stroke="#1f3a5f" stroke-width="1.3"/>
+    <use href="#frost" x="372" y="13" width="13" height="13"/><text x="388" y="24" fill="#46566a" font-size="10.5">Frozen</text>
+    <use href="#fire" x="436" y="13" width="13" height="13"/><text x="452" y="24" fill="#46566a" font-size="10.5">Training</text>
   </g>
-  <text x="115" y="390" fill="#1f3a5f" font-size="24" font-weight="800" text-anchor="middle">bimanual</text>
-  <text x="115" y="410" fill="#5a5a5a" font-size="12" text-anchor="middle">multi-camera teleop</text>
-  <text x="300" y="390" fill="#1f3a5f" font-size="24" font-weight="800" text-anchor="middle">π0.5</text>
-  <text x="300" y="410" fill="#5a5a5a" font-size="12" text-anchor="middle">VLA fine-tuning</text>
-  <text x="485" y="390" fill="#1f3a5f" font-size="24" font-weight="800" text-anchor="middle">4090↔Orin</text>
-  <text x="485" y="410" fill="#5a5a5a" font-size="12" text-anchor="middle">closed-loop gRPC</text>
+  <rect x="500" y="11" width="86" height="18" rx="9" fill="#1f3a5f"/>
+  <text x="543" y="24" fill="#ffffff" font-size="10" font-weight="700" text-anchor="middle">LeRobot &#183; 2026</text>
+
+  <!-- ================= PANEL A : Teleoperation & Data ================= -->
+  <g filter="url(#ds)"><rect x="12" y="36" width="284" height="198" rx="10" fill="#ffffff" stroke="#dde3ea" stroke-width="1.1"/></g>
+  <path d="M12 46 a10 10 0 0 1 10 -10 H276 a10 10 0 0 1 10 10 V58 H12 Z" fill="#e8f1fd"/>
+  <text x="22" y="52" fill="#1a4d8f" font-size="11.5" font-weight="800">(a) Teleoperation &amp; Data Collection</text>
+
+  <use href="#arm" x="22" y="92" width="40" height="40"/>
+  <text x="42" y="146" fill="#0a5b53" font-size="9.5" text-anchor="middle">AlohaMini</text>
+  <text x="42" y="157" fill="#0a5b53" font-size="9.5" text-anchor="middle">leader</text>
+  <use href="#cam" x="20" y="166" width="20" height="15"/>
+  <use href="#cam" x="44" y="166" width="20" height="15"/>
+  <text x="42" y="192" fill="#3a4a5a" font-size="8.5" text-anchor="middle">multi-camera</text>
+
+  <line x1="70" y1="112" x2="92" y2="112" stroke="#46566a" stroke-width="1.5" marker-end="url(#m)"/>
+  <text x="81" y="106" fill="#5a6675" font-size="8" text-anchor="middle">teleop</text>
+
+  <rect x="94" y="92" width="84" height="40" rx="8" fill="#e9fbf8" stroke="#0d9488" stroke-width="1.2"/>
+  <text x="136" y="109" fill="#063b3b" font-size="10.5" font-weight="700" text-anchor="middle">AlohaPro</text>
+  <text x="136" y="123" fill="#0a5b53" font-size="9" text-anchor="middle">/ Orin runtime</text>
+
+  <line x1="136" y1="132" x2="136" y2="150" stroke="#46566a" stroke-width="1.5" marker-end="url(#m)"/>
+  <rect x="86" y="152" width="100" height="34" rx="8" fill="#fff7e6" stroke="#d79224" stroke-width="1.2"/>
+  <text x="136" y="167" fill="#6a4708" font-size="10" font-weight="700" text-anchor="middle">Sync Recorder</text>
+  <text x="136" y="179" fill="#7c5a1c" font-size="8.5" text-anchor="middle">video+state+action</text>
+
+  <line x1="186" y1="169" x2="206" y2="169" stroke="#46566a" stroke-width="1.5" marker-end="url(#m)"/>
+  <!-- dataset cylinder -->
+  <g>
+    <path d="M210 150 h60 v44 a30 8 0 0 1 -60 0 Z" fill="#fdeccb" stroke="#d79224" stroke-width="1.2"/>
+    <ellipse cx="240" cy="150" rx="30" ry="8" fill="#fff7e6" stroke="#d79224" stroke-width="1.2"/>
+    <text x="240" y="172" fill="#6a4708" font-size="10" font-weight="700" text-anchor="middle">LeRobot</text>
+    <text x="240" y="184" fill="#7c5a1c" font-size="8.5" text-anchor="middle">dataset</text>
+  </g>
+  <text x="240" y="210" fill="#3a4a5a" font-size="8.5" text-anchor="middle">clean &#183; delete bad &#183; merge</text>
+
+  <!-- ================= PANEL B : Pi0.5 Training ================= -->
+  <g filter="url(#ds)"><rect x="304" y="36" width="284" height="198" rx="10" fill="#ffffff" stroke="#dde3ea" stroke-width="1.1"/></g>
+  <path d="M304 46 a10 10 0 0 1 10 -10 H578 a10 10 0 0 1 10 10 V58 H304 Z" fill="#f1ebfd"/>
+  <text x="314" y="52" fill="#4a2f9e" font-size="11.5" font-weight="800">(b) &#960;0.5 Training on A100</text>
+
+  <!-- inputs -->
+  <g><rect x="314" y="78" width="30" height="22" rx="3" fill="#cfe0f5" stroke="#2f6fd0" stroke-width="1"/><rect x="318" y="82" width="30" height="22" rx="3" fill="#e3eefb" stroke="#2f6fd0" stroke-width="1"/></g>
+  <text x="331" y="116" fill="#3a4a5a" font-size="8.5" text-anchor="middle">RGB</text>
+  <rect x="314" y="126" width="40" height="18" rx="4" fill="#eef1f5" stroke="#aab4c0" stroke-width="1"/>
+  <text x="334" y="138" fill="#46566a" font-size="8" text-anchor="middle">&#8220;place&#8230;&#8221;</text>
+  <text x="334" y="156" fill="#3a4a5a" font-size="8" text-anchor="middle">instruction</text>
+
+  <!-- VLA backbone -->
+  <rect x="372" y="74" width="118" height="92" rx="9" fill="#f6f2ff" stroke="#7b61ff" stroke-width="1.3"/>
+  <text x="431" y="89" fill="#31166c" font-size="10.5" font-weight="800" text-anchor="middle">&#960;0.5 VLA</text>
+  <rect x="382" y="96" width="98" height="28" rx="6" fill="#ffffff" stroke="#7b61ff" stroke-width="1"/>
+  <use href="#frost" x="386" y="101" width="12" height="12"/>
+  <text x="438" y="113" fill="#4a2f86" font-size="9" text-anchor="middle">VL backbone</text>
+  <rect x="382" y="128" width="98" height="28" rx="6" fill="#fff3e0" stroke="#e8852a" stroke-width="1"/>
+  <use href="#fire" x="386" y="133" width="12" height="12"/>
+  <text x="440" y="145" fill="#8a4b12" font-size="9" text-anchor="middle">action expert</text>
+
+  <line x1="354" y1="92" x2="370" y2="92" stroke="#46566a" stroke-width="1.4" marker-end="url(#m)"/>
+  <line x1="354" y1="135" x2="370" y2="135" stroke="#46566a" stroke-width="1.4" marker-end="url(#m)"/>
+
+  <!-- output action chunk -->
+  <line x1="490" y1="120" x2="508" y2="120" stroke="#46566a" stroke-width="1.5" marker-end="url(#m)"/>
+  <g fill="#fde7f4" stroke="#c026a6" stroke-width="1">
+    <rect x="510" y="104" width="10" height="32" rx="2"/><rect x="522" y="104" width="10" height="32" rx="2"/><rect x="534" y="104" width="10" height="32" rx="2"/><rect x="546" y="104" width="10" height="32" rx="2"/>
+  </g>
+  <text x="533" y="150" fill="#7a2674" font-size="8.5" text-anchor="middle">action chunk</text>
+
+  <!-- loss + tag -->
+  <text x="431" y="186" fill="#8a4b12" font-size="11" text-anchor="middle" font-style="italic">L<tspan baseline-shift="sub" font-size="8" font-style="normal">flow-matching</tspan></text>
+  <rect x="356" y="198" width="150" height="22" rx="11" fill="#f1ebfd" stroke="#7b61ff" stroke-width="1"/>
+  <text x="431" y="213" fill="#4a2f86" font-size="9.5" font-weight="600" text-anchor="middle">A100 &#183; bf16 &#183; grad checkpointing</text>
+
+  <!-- ================= PANEL C : Remote Inference ================= -->
+  <g filter="url(#ds)"><rect x="12" y="242" width="284" height="200" rx="10" fill="#ffffff" stroke="#dde3ea" stroke-width="1.1"/></g>
+  <path d="M12 252 a10 10 0 0 1 10 -10 H276 a10 10 0 0 1 10 10 V264 H12 Z" fill="#e7faf5"/>
+  <text x="22" y="258" fill="#0a6b62" font-size="11.5" font-weight="800">(c) Remote Closed-Loop Inference</text>
+
+  <!-- Orin -->
+  <rect x="24" y="280" width="116" height="86" rx="9" fill="#e9fbf8" stroke="#0d9488" stroke-width="1.3"/>
+  <text x="82" y="298" fill="#063b3b" font-size="10.5" font-weight="800" text-anchor="middle">Orin Host</text>
+  <use href="#cam" x="34" y="306" width="18" height="13"/>
+  <use href="#grip" x="58" y="304" width="18" height="18"/>
+  <text x="105" y="316" fill="#0a5b53" font-size="8.5" text-anchor="middle">cameras</text>
+  <text x="105" y="326" fill="#0a5b53" font-size="8.5" text-anchor="middle">robot IO</text>
+  <rect x="32" y="332" width="100" height="26" rx="7" fill="#ffffff" stroke="#12b76a" stroke-width="1.1"/>
+  <text x="82" y="343" fill="#067647" font-size="8.5" font-weight="700" text-anchor="middle">safety gate</text>
+  <text x="82" y="353" fill="#2f8f63" font-size="7.5" text-anchor="middle">clamp &#183; watchdog</text>
+
+  <!-- 4090 -->
+  <rect x="168" y="280" width="116" height="86" rx="9" fill="#fdeef8" stroke="#c026a6" stroke-width="1.3"/>
+  <text x="226" y="298" fill="#5b0a57" font-size="10.5" font-weight="800" text-anchor="middle">RTX 4090</text>
+  <text x="226" y="312" fill="#7a2674" font-size="8.5" text-anchor="middle">policy_server</text>
+  <rect x="178" y="320" width="96" height="38" rx="7" fill="#ffffff" stroke="#c026a6" stroke-width="1"/>
+  <text x="226" y="334" fill="#7a2674" font-size="8.5" font-weight="700" text-anchor="middle">&#960;0.5 on CUDA</text>
+  <text x="226" y="346" fill="#a23f96" font-size="7.5" text-anchor="middle">action-chunk</text>
+  <text x="226" y="355" fill="#a23f96" font-size="7.5" text-anchor="middle">scheduler</text>
+
+  <!-- loop arrows -->
+  <path d="M140 300 H166" stroke="#0d9488" stroke-width="1.8" fill="none" marker-end="url(#mt)"/>
+  <text x="153" y="294" fill="#0c7a70" font-size="7.5" text-anchor="middle">obs</text>
+  <path d="M168 344 H142" stroke="#c026a6" stroke-width="1.8" fill="none" marker-end="url(#mp)"/>
+  <text x="155" y="376" fill="#a8268f" font-size="7.5" text-anchor="middle">actions</text>
+  <text x="150" y="394" fill="#3a4a5a" font-size="8.5" text-anchor="middle">gRPC over network &#183; temporal aggregation</text>
+  <text x="150" y="408" fill="#5a6675" font-size="8" text-anchor="middle">large model off-board; Orin stays real-time</text>
+
+  <!-- ================= PANEL D : Deployment & Safety ================= -->
+  <g filter="url(#ds)"><rect x="304" y="242" width="284" height="200" rx="10" fill="#ffffff" stroke="#dde3ea" stroke-width="1.1"/></g>
+  <path d="M304 252 a10 10 0 0 1 10 -10 H578 a10 10 0 0 1 10 10 V264 H304 Z" fill="#eafaf0"/>
+  <text x="314" y="258" fill="#0a7a47" font-size="11.5" font-weight="800">(d) Deployment &amp; Safety Gate</text>
+
+  <g fill="#fde7f4" stroke="#c026a6" stroke-width="1">
+    <rect x="316" y="290" width="9" height="26" rx="2"/><rect x="327" y="290" width="9" height="26" rx="2"/><rect x="338" y="290" width="9" height="26" rx="2"/>
+  </g>
+  <text x="332" y="330" fill="#7a2674" font-size="8" text-anchor="middle">candidate</text>
+  <text x="332" y="340" fill="#7a2674" font-size="8" text-anchor="middle">action</text>
+  <line x1="350" y1="303" x2="366" y2="303" stroke="#46566a" stroke-width="1.5" marker-end="url(#m)"/>
+
+  <!-- safety diamond -->
+  <path d="M408 282 L444 308 L408 334 L372 308 Z" fill="#eafaf0" stroke="#12b76a" stroke-width="1.4"/>
+  <text x="408" y="304" fill="#067647" font-size="9" font-weight="700" text-anchor="middle">safety</text>
+  <text x="408" y="316" fill="#067647" font-size="9" font-weight="700" text-anchor="middle">checks</text>
+
+  <!-- pass -->
+  <path d="M444 300 H496" stroke="#12b76a" stroke-width="1.8" fill="none" marker-end="url(#mg)"/>
+  <text x="470" y="294" fill="#067647" font-size="8" text-anchor="middle">&#10003; safe</text>
+  <rect x="498" y="286" width="78" height="30" rx="8" fill="#e9fbf8" stroke="#0d9488" stroke-width="1.2"/>
+  <text x="537" y="300" fill="#063b3b" font-size="9.5" font-weight="700" text-anchor="middle">Real Robot</text>
+  <text x="537" y="311" fill="#0a5b53" font-size="8" text-anchor="middle">torque command</text>
+
+  <!-- reject -->
+  <path d="M408 334 V356 H470" stroke="#d64545" stroke-width="1.6" fill="none" stroke-dasharray="4 3" marker-end="url(#m)"/>
+  <text x="408" y="350" fill="#b23333" font-size="8">&#10007; reject</text>
+  <rect x="472" y="346" width="104" height="22" rx="7" fill="#fdecec" stroke="#d64545" stroke-width="1"/>
+  <text x="524" y="361" fill="#b23333" font-size="8" text-anchor="middle">NaN / stale / out-of-limit</text>
+
+  <text x="446" y="392" fill="#3a4a5a" font-size="8.5" text-anchor="middle">dry-run &#8594; no-follower &#8594; enable torque</text>
+  <text x="446" y="406" fill="#5a6675" font-size="8" text-anchor="middle">stop order: client &#8594; host &#8594; policy server</text>
+
+  <!-- offline->online deploy link note -->
+  <text x="300" y="446" fill="#9aa6b2" font-size="8" text-anchor="middle">checkpoint exported in (b) is deployed to the 4090 policy server in (c)</text>
 </svg>
