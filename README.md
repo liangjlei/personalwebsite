@@ -14,6 +14,7 @@ perception, speech interaction, and vision–language–action models.
 | [Streaming Multimodal Speech Grounding](projects/multimodal-speech-grounding) | Speech + perception |
 | [Parameter-Efficient VLA Adaptation](projects/vla-parameter-efficient-adaptation) | Vision–language–action |
 | [Aloha π0.5 LeRobot (real-robot pipeline)](projects/aloha-pi05-lerobot) | Real-robot VLA · teleop + remote inference |
+| [Illumination-Robust Grasp Verification from Fingertip Cameras](projects/finger-camera-grasp-verification) | Robot perception · on-device deployment |
 | [Neural Motion Retargeting](projects/neural-motion-retargeting) | Teleoperation |
 | [Audio–Visual Active Speaker Detection](projects/audio-visual-active-speaker-detection) | Multimodal perception |
 | [Robust Hand–Eye Calibration](projects/robust-hand-eye-calibration) | Robotics systems |

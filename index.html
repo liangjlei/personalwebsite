@@ -319,6 +319,28 @@
               </td>
             </tr>
 
+            <tr class="paper highlight">
+              <td class="paper-thumb">
+                <img src="./assets/projects/grasp-check.png" alt="Grasp-Check system figure: fingertip-camera sensing, the photometric occlusion and stereo-disparity cues, the cross-finger fusion network, and the ablation / edge-deployment results" />
+              </td>
+              <td class="paper-body">
+                <span class="papertitle">Illumination-Robust Grasp Verification from Fingertip Cameras</span>
+                <br />
+                <span class="pub-authors">Jinglei Liang</span>
+                <br />
+                <em class="pub-venue">Technical Report</em>, 2026
+                <br />
+                <span class="project-links">
+                  <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/finger-camera-grasp-verification">project page</a>
+                  /
+                  <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/finger-camera-grasp-verification#readme">report</a>
+                </span>
+                <p>
+                  A compact <span class="mono">SUCCESS / FAILURE</span> detector that reads whether a 12-DoF dexterous hand is actually holding an object directly from its fingertip cameras &mdash; a held grasp occludes the lens (dark, low edge density), an empty one sees the open workspace (bright). I run a controlled comparison of a fixed brightness threshold, a hand-crafted-feature fusion MLP, and an end-to-end <strong>MobileNetV3</strong> CNN under a strict cross-illumination protocol: all three are near-ceiling in normal light (CNN <strong>99.7%</strong>, 5-fold CV, zero false positives), but on a held-out low-light split only the CNN holds at <strong>100%</strong> while the brightness baseline collapses to 87&ndash;94%. Deployed as a TensorRT&nbsp;FP16 engine on a <strong>Jetson&nbsp;AGX&nbsp;Thor</strong> at <strong>0.81&nbsp;ms&nbsp;/&nbsp;169&nbsp;FPS</strong>, it flips to <span class="mono">FAILURE</span> within ~40&nbsp;ms of a drop with no temporal smoothing (6/7 correct across real objects on-robot).
+                </p>
+              </td>
+            </tr>
+
             <tr
               class="paper"
               onmouseover="tlp_start()" onmouseout="tlp_stop()"
