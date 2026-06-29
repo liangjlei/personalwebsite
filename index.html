@@ -554,33 +554,69 @@
         </table>
       </section>
 
-      <!-- ===================== DEMO VIDEO ===================== -->
+      <!-- ===================== DEMO VIDEOS ===================== -->
       <section id="demo" class="section">
         <h2 class="section-title">Demo</h2>
         <p class="section-lead">
-          A short clip from the Aloha &pi;0.5 LeRobot pipeline &mdash; bimanual
-          teleoperation and closed-loop manipulation on the real robot.
+          Short real-robot clips spanning the stack &mdash; learned bimanual
+          manipulation, a full perception-to-grasp pipeline, VLA-driven
+          assembly, and fine dexterous control.
         </p>
-        <figure class="demo-figure">
-          <video
-            class="demo-video"
-            controls
-            preload="none"
-            playsinline
-            poster="./assets/demo/aloha_pi05_poster.jpg"
-          >
-            <source src="./assets/demo/aloha_pi05_demo.mp4" type="video/mp4" />
-            <source src="./assets/demo/aloha_pi05_demo.mov" type="video/quicktime" />
-            Your browser cannot play this video.
-            <a href="./assets/demo/aloha_pi05_demo.mp4">Download the demo (MP4)</a>.
-          </video>
-          <figcaption class="demo-caption">
-            Aloha &pi;0.5 LeRobot &middot; real-robot demo &middot;
-            <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/aloha-pi05-lerobot">project&nbsp;page</a>
-            &middot;
-            <a href="./assets/demo/aloha_pi05_demo.mp4">open&nbsp;video</a>
-          </figcaption>
-        </figure>
+        <div class="demo-grid">
+
+          <figure class="demo-figure">
+            <video class="demo-video" controls preload="none" playsinline
+                   poster="./assets/demo/demo-2.jpg">
+              <source src="./assets/demo/demo-2.mp4" type="video/mp4" />
+              Your browser cannot play this video.
+              <a href="./assets/demo/demo-2.mp4">Download (MP4)</a>.
+            </video>
+            <figcaption class="demo-caption">
+              <strong>AlohaMini &pi;0.5 &middot; pick-and-place</strong><br />
+              Learned bimanual pick-and-place on a real humanoid.
+            </figcaption>
+          </figure>
+
+          <figure class="demo-figure">
+            <video class="demo-video" controls preload="none" playsinline
+                   poster="./assets/demo/demo-4.jpg">
+              <source src="./assets/demo/demo-4.mp4" type="video/mp4" />
+              Your browser cannot play this video.
+              <a href="./assets/demo/demo-4.mp4">Download (MP4)</a>.
+            </video>
+            <figcaption class="demo-caption">
+              <strong>Perception-to-grasp pipeline</strong><br />
+              Full-chain detect &rarr; localize &rarr; plan &rarr; grasp on a single arm.
+            </figcaption>
+          </figure>
+
+          <figure class="demo-figure">
+            <video class="demo-video" controls preload="none" playsinline
+                   poster="./assets/demo/demo-3.jpg">
+              <source src="./assets/demo/demo-3.mp4" type="video/mp4" />
+              Your browser cannot play this video.
+              <a href="./assets/demo/demo-3.mp4">Download (MP4)</a>.
+            </video>
+            <figcaption class="demo-caption">
+              <strong>VLA assembly &middot; WALL&middot;E</strong><br />
+              VLA-driven dual-arm cell assembling a WALL&middot;E model.
+            </figcaption>
+          </figure>
+
+          <figure class="demo-figure">
+            <video class="demo-video" controls preload="none" playsinline
+                   poster="./assets/demo/coin-standing.jpg">
+              <source src="./assets/demo/coin-standing.mp4" type="video/mp4" />
+              Your browser cannot play this video.
+              <a href="./assets/demo/coin-standing.mp4">Download (MP4)</a>.
+            </video>
+            <figcaption class="demo-caption">
+              <strong>Dexterous coin standing</strong><br />
+              Fine force control stands a coin upright on the desk.
+            </figcaption>
+          </figure>
+
+        </div>
       </section>
 
       <!-- ===================== SELECTED RESULTS (TABLE) ===================== -->

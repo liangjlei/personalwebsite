@@ -429,15 +429,27 @@ span.hl {
 }
 
 /* ===================== RESULTS TABLE ===================== */
-/* ---------- Demo video ---------- */
-.demo-figure {
+/* ---------- Demo videos ---------- */
+.demo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
   margin: 1.6rem 0 0;
+  max-width: 900px;
+}
+@media (max-width: 640px) {
+  .demo-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.demo-figure {
+  margin: 0;
 }
 .demo-video {
   display: block;
   width: 100%;
-  max-width: 760px;
   aspect-ratio: 16 / 9;
+  object-fit: contain;
   background: #0d1622;
   border: 1px solid var(--line);
   border-radius: 12px;
@@ -445,7 +457,6 @@ span.hl {
 }
 .demo-caption {
   margin-top: 0.7rem;
-  max-width: 760px;
   font-size: 0.86rem;
   color: var(--ink-faint);
   text-align: center;
