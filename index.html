@@ -285,6 +285,43 @@
             </tr>
 
             <tr
+              class="paper highlight"
+              onmouseover="orb_start()" onmouseout="orb_stop()"
+            >
+              <td class="paper-thumb">
+                <div class="one">
+                  <div class="two" id="orb_image">
+                    <img class="frame-a" src="./assets/projects/openrobot-alt.svg" alt="" aria-hidden="true" />
+                  </div>
+                  <img class="frame-b" src="./assets/projects/openrobot.svg" alt="OpenRobot language-to-action pipeline diagram" />
+                </div>
+                <script type="text/javascript">
+                  function orb_start() { document.getElementById('orb_image').style.opacity = "1"; }
+                  function orb_stop()  { document.getElementById('orb_image').style.opacity = "0"; }
+                  orb_stop()
+                </script>
+              </td>
+              <td class="paper-body">
+                <span class="papertitle">OpenRobot: An LLM-Driven Framework for Language-to-Action Robot Control</span>
+                <br />
+                <span class="pub-authors">Jinglei Liang</span>
+                <br />
+                <em class="pub-venue">Open-source system</em>, 2026
+                <br />
+                <span class="project-links">
+                  <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/openrobot">project page</a>
+                  /
+                  <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/openrobot#readme">code</a>
+                </span>
+                <p>
+                  An open-source robot framework that closes the loop from natural-language instruction to real execution:
+                  <span class="mono">human &rarr; LLM &rarr; planner &rarr; skills &rarr; robot SDK &rarr; feedback</span>.
+                  A skill layer sits between reasoning and motion so the agent only ever <strong>requests capabilities</strong> &mdash; planning, scheduling, resource gating, and recovery stay decoupled from the driver. It runs the same runtime across <strong>Web, API, voice, and chat-bot</strong> entries, swaps LLM backends (GPT / Qwen / DeepSeek / GLM) behind one interface, auto-registers new skills from a single file, and targets manipulator arms, mobile bases, and ROS2 / MoveIt2 platforms with simulation-first validation.
+                </p>
+              </td>
+            </tr>
+
+            <tr
               class="paper"
               onmouseover="tlp_start()" onmouseout="tlp_stop()"
             >
