@@ -107,6 +107,13 @@ skills/
 
 ## Architecture
 
+The full stack, from model inputs and outputs through the layered runtime to
+sim-to-real deployment:
+
+![OpenRobot architecture: (a) instruction and observation inputs into the LLM agent, (b) task planner emitting structured capability requests to the skill executor, (c) robot controller driving arm/base/camera with a perception feedback loop, and (d) one runtime deployed to MuJoCo simulation and the real XLeRobot hardware](../../assets/projects/openrobot-arch.svg)
+
+The same boundaries expressed as a flow:
+
 ```mermaid
 flowchart TD
     U[User entry<br/>Web / Voice / Bot / API]

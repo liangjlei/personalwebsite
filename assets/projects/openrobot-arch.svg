@@ -1,0 +1,196 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 690" font-family="'Inter','Helvetica Neue',Arial,sans-serif">
+  <defs>
+    <filter id="ds" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#1a2b40" flood-opacity="0.16"/>
+    </filter>
+    <linearGradient id="g_blue" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eff6ff"/><stop offset="1" stop-color="#dcecfd"/></linearGradient>
+    <linearGradient id="g_teal" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ebfcf7"/><stop offset="1" stop-color="#d2f3ea"/></linearGradient>
+    <linearGradient id="g_amber" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff8ea"/><stop offset="1" stop-color="#fdeccb"/></linearGradient>
+    <linearGradient id="g_violet" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f5efff"/><stop offset="1" stop-color="#e8defc"/></linearGradient>
+    <linearGradient id="g_green" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eefcef"/><stop offset="1" stop-color="#d2f1d6"/></linearGradient>
+    <linearGradient id="g_slate" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f2f5f9"/><stop offset="1" stop-color="#e2e8f0"/></linearGradient>
+    <marker id="ar" markerWidth="9" markerHeight="9" refX="6.4" refY="3" orient="auto"><path d="M0,0 L6.4,3 L0,6 Z" fill="#5d6b7c"/></marker>
+    <marker id="ar_o" markerWidth="9" markerHeight="9" refX="6.4" refY="3" orient="auto"><path d="M0,0 L6.4,3 L0,6 Z" fill="#c8772e"/></marker>
+    <marker id="ar_g" markerWidth="9" markerHeight="9" refX="6.4" refY="3" orient="auto"><path d="M0,0 L6.4,3 L0,6 Z" fill="#0d9488"/></marker>
+  </defs>
+  <rect width="1120" height="690" fill="#ffffff"/>
+
+  <!-- ===== header / badge ===== -->
+  <rect x="24" y="18" width="178" height="40" rx="9" fill="#1f3a5f"/>
+  <text x="113" y="44" fill="#ffffff" font-size="19" font-weight="800" text-anchor="middle">OpenRobot</text>
+  <text x="218" y="38" fill="#13243a" font-size="22" font-weight="800">LLM-Driven Language &#8594; Action Architecture</text>
+  <text x="219" y="60" fill="#7a7a7a" font-size="13">natural-language instruction &#183; LLM planning &#183; skill execution &#183; closed-loop control &#183; sim-to-real deployment</text>
+
+  <!-- ================= PANEL A ================= -->
+  <rect x="24" y="78" width="346" height="338" rx="16" fill="#f4f9ff" stroke="#9cc0e8" stroke-width="1.4"/>
+  <text x="42" y="104" fill="#0f3a6e" font-size="15" font-weight="800">(a) Inputs &amp; Understanding</text>
+
+  <g filter="url(#ds)"><rect x="44" y="118" width="306" height="56" rx="11" fill="url(#g_blue)" stroke="#2f6fd0" stroke-width="1.4"/></g>
+  <rect x="44" y="118" width="306" height="5" rx="2.5" fill="#2f6fd0"/>
+  <text x="58" y="142" fill="#0f3a6e" font-size="13.5" font-weight="700">Instruction  L  (text / voice)</text>
+  <text x="58" y="161" fill="#36567c" font-size="12" font-style="italic">&#8220;Put the red block in the cart.&#8221;</text>
+
+  <g filter="url(#ds)"><rect x="44" y="186" width="306" height="56" rx="11" fill="url(#g_teal)" stroke="#0d9488" stroke-width="1.4"/></g>
+  <rect x="44" y="186" width="306" height="5" rx="2.5" fill="#0d9488"/>
+  <text x="58" y="210" fill="#063b3b" font-size="13.5" font-weight="700">Observation  O</text>
+  <text x="58" y="229" fill="#0a5b53" font-size="12">camera frames &#183; robot state &#183; battery</text>
+  <!-- tiny camera frame glyph -->
+  <rect x="300" y="196" width="38" height="30" rx="3" fill="#cfeee7" stroke="#0d9488" stroke-width="1"/>
+  <circle cx="319" cy="211" r="7" fill="none" stroke="#0d9488" stroke-width="1.4"/><rect x="313" y="205" width="6" height="6" fill="#d83a3a"/>
+
+  <path d="M197 242 V268" stroke="#5b6775" stroke-width="2.2" fill="none" marker-end="url(#ar)"/>
+
+  <g filter="url(#ds)"><rect x="44" y="272" width="306" height="74" rx="11" fill="url(#g_violet)" stroke="#7b61ff" stroke-width="1.4"/></g>
+  <rect x="44" y="272" width="306" height="5" rx="2.5" fill="#7b61ff"/>
+  <text x="58" y="298" fill="#31166c" font-size="14.5" font-weight="800">LLM Agent</text>
+  <text x="58" y="317" fill="#492f86" font-size="12">understand &#183; ground &#183; decide next capability</text>
+  <text x="58" y="335" fill="#6a4aa8" font-size="11.5" font-weight="600">GPT &#183; Qwen &#183; DeepSeek &#183; GLM &#183; Llama</text>
+  <text x="42" y="406" fill="#5b6775" font-size="11.5" font-style="italic">model input: (L, O)  &#8594;  reasoning over the task</text>
+
+  <!-- A -> B -->
+  <path d="M370 247 H386" stroke="#5b6775" stroke-width="2.4" fill="none" marker-end="url(#ar)"/>
+
+  <!-- ================= PANEL B ================= -->
+  <rect x="386" y="78" width="346" height="338" rx="16" fill="#fffaf0" stroke="#e6c585" stroke-width="1.4"/>
+  <text x="404" y="104" fill="#6a4708" font-size="15" font-weight="800">(b) Planning &amp; Skill Calls</text>
+
+  <g filter="url(#ds)"><rect x="406" y="118" width="306" height="50" rx="11" fill="url(#g_amber)" stroke="#d79224" stroke-width="1.4"/></g>
+  <rect x="406" y="118" width="306" height="5" rx="2.5" fill="#d79224"/>
+  <text x="420" y="140" fill="#6a4708" font-size="14" font-weight="800">Task Planner</text>
+  <text x="420" y="158" fill="#7c5a1c" font-size="12">decompose &#183; sequence &#183; multi-turn correction</text>
+
+  <path d="M559 168 V186" stroke="#5b6775" stroke-width="2.2" fill="none" marker-end="url(#ar)"/>
+
+  <!-- model OUTPUT: structured capability call -->
+  <rect x="406" y="190" width="306" height="64" rx="9" fill="#ffffff" stroke="#b9863a" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <text x="416" y="208" fill="#9a5a1f" font-size="10.5" font-weight="700">model output &#8594; capability request</text>
+  <text x="416" y="228" fill="#3a3a3a" font-size="12" font-family="'SFMono-Regular',Menlo,Consolas,monospace">request_capability("pick",</text>
+  <text x="416" y="245" fill="#3a3a3a" font-size="12" font-family="'SFMono-Regular',Menlo,Consolas,monospace">    target="red_block")</text>
+
+  <path d="M559 254 V272" stroke="#5b6775" stroke-width="2.2" fill="none" marker-end="url(#ar)"/>
+
+  <g filter="url(#ds)"><rect x="406" y="276" width="306" height="48" rx="11" fill="url(#g_amber)" stroke="#d79224" stroke-width="1.4"/></g>
+  <rect x="406" y="276" width="306" height="5" rx="2.5" fill="#d79224"/>
+  <text x="420" y="297" fill="#6a4708" font-size="14" font-weight="800">Skill Executor</text>
+  <text x="420" y="314" fill="#7c5a1c" font-size="11.5">contract &#183; scheduling &#183; resource &amp; readiness gate &#183; timeout</text>
+
+  <!-- skill chips -->
+  <g font-size="10.5" font-weight="600" text-anchor="middle">
+    <rect x="406" y="336" width="96" height="22" rx="11" fill="#fff" stroke="#c8772e" stroke-width="1.1"/><text x="454" y="351" fill="#9a5a1f">inspect_scene</text>
+    <rect x="510" y="336" width="92" height="22" rx="11" fill="#fff" stroke="#c8772e" stroke-width="1.1"/><text x="556" y="351" fill="#9a5a1f">look_around</text>
+    <rect x="610" y="336" width="102" height="22" rx="11" fill="#fff" stroke="#c8772e" stroke-width="1.1"/><text x="661" y="351" fill="#9a5a1f">move_base</text>
+    <rect x="406" y="362" width="96" height="22" rx="11" fill="#fff" stroke="#c8772e" stroke-width="1.1"/><text x="454" y="377" fill="#9a5a1f">set_arm_pose</text>
+    <rect x="510" y="362" width="92" height="22" rx="11" fill="#fff" stroke="#c8772e" stroke-width="1.1"/><text x="556" y="377" fill="#9a5a1f">set_gripper</text>
+    <rect x="610" y="362" width="102" height="22" rx="11" fill="#fff" stroke="#c8772e" stroke-width="1.1"/><text x="661" y="377" fill="#9a5a1f">pick / place</text>
+  </g>
+  <text x="404" y="404" fill="#5b6775" font-size="11.5" font-style="italic">agent requests capabilities &#8212; never raw hardware actions</text>
+
+  <!-- B -> C -->
+  <path d="M732 247 H748" stroke="#5b6775" stroke-width="2.4" fill="none" marker-end="url(#ar)"/>
+
+  <!-- ================= PANEL C ================= -->
+  <rect x="748" y="78" width="348" height="338" rx="16" fill="#eefbf7" stroke="#8fd6c6" stroke-width="1.4"/>
+  <text x="766" y="104" fill="#063b3b" font-size="15" font-weight="800">(c) Robot Runtime &amp; Control</text>
+
+  <g filter="url(#ds)"><rect x="768" y="118" width="308" height="50" rx="11" fill="url(#g_teal)" stroke="#0d9488" stroke-width="1.4"/></g>
+  <rect x="768" y="118" width="308" height="5" rx="2.5" fill="#0d9488"/>
+  <text x="782" y="140" fill="#063b3b" font-size="14" font-weight="800">Robot Controller</text>
+  <text x="782" y="158" fill="#0a5b53" font-size="12">capability &#8594; validated robot action</text>
+
+  <path d="M922 168 V184" stroke="#5b6775" stroke-width="2.2" fill="none" marker-end="url(#ar)"/>
+
+  <!-- actuator row -->
+  <g>
+    <rect x="768" y="188" width="98" height="46" rx="9" fill="#fff" stroke="#0d9488" stroke-width="1.2"/><text x="817" y="210" fill="#063b3b" font-size="12.5" font-weight="700" text-anchor="middle">Arm</text><text x="817" y="226" fill="#0a5b53" font-size="10.5" text-anchor="middle">SO101</text>
+    <rect x="873" y="188" width="98" height="46" rx="9" fill="#fff" stroke="#0d9488" stroke-width="1.2"/><text x="922" y="210" fill="#063b3b" font-size="12.5" font-weight="700" text-anchor="middle">Base</text><text x="922" y="226" fill="#0a5b53" font-size="10.5" text-anchor="middle">LeKiwi</text>
+    <rect x="978" y="188" width="98" height="46" rx="9" fill="#fff" stroke="#0d9488" stroke-width="1.2"/><text x="1027" y="210" fill="#063b3b" font-size="12.5" font-weight="700" text-anchor="middle">Camera</text><text x="1027" y="226" fill="#0a5b53" font-size="10.5" text-anchor="middle">RGB</text>
+  </g>
+
+  <g filter="url(#ds)"><rect x="768" y="250" width="308" height="44" rx="11" fill="url(#g_blue)" stroke="#2f6fd0" stroke-width="1.4"/></g>
+  <rect x="768" y="250" width="308" height="5" rx="2.5" fill="#2f6fd0"/>
+  <text x="782" y="271" fill="#0f3a6e" font-size="13" font-weight="700">Perception Service</text>
+  <text x="782" y="288" fill="#36567c" font-size="11.5">observation stream &#183; scene understanding</text>
+
+  <rect x="768" y="304" width="308" height="42" rx="11" fill="url(#g_violet)" stroke="#7b61ff" stroke-width="1.3" stroke-dasharray="5 3"/>
+  <text x="782" y="324" fill="#31166c" font-size="12.5" font-weight="700">Capability Service &#183; VLA  (gRPC)</text>
+  <text x="782" y="339" fill="#6a4aa8" font-size="10.5">optional foundation-model skills</text>
+
+  <text x="766" y="404" fill="#5b6775" font-size="11.5" font-style="italic">model output executed on real / simulated hardware</text>
+
+  <!-- ===== closed loop: perception -> back to inputs (a) ===== -->
+  <path d="M768 272 H744 V70 H352 V112" fill="none" stroke="#0d9488" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#ar_g)"/>
+  <rect x="404" y="63" width="288" height="15" rx="7.5" fill="#ffffff"/>
+  <text x="548" y="74" fill="#0d9488" font-size="11" font-weight="700" text-anchor="middle">closed loop: observation &amp; execution feedback &#8594; agent</text>
+
+  <!-- ================= PANEL D : DEPLOYMENT ================= -->
+  <rect x="24" y="430" width="1072" height="236" rx="16" fill="#f3f6fa" stroke="#aebccd" stroke-width="1.4"/>
+  <text x="42" y="456" fill="#21344a" font-size="15" font-weight="800">(d) Deployment</text>
+
+  <!-- user entries -->
+  <g filter="url(#ds)"><rect x="44" y="472" width="190" height="150" rx="12" fill="url(#g_slate)" stroke="#64748b" stroke-width="1.4"/></g>
+  <rect x="44" y="472" width="190" height="5" rx="2.5" fill="#64748b"/>
+  <text x="139" y="496" fill="#21344a" font-size="13.5" font-weight="800" text-anchor="middle">User Entries</text>
+  <g font-size="11.5" font-weight="600" text-anchor="middle">
+    <rect x="58" y="508" width="76" height="24" rx="12" fill="#fff" stroke="#64748b" stroke-width="1"/><text x="96" y="524" fill="#3b4757">Web</text>
+    <rect x="144" y="508" width="76" height="24" rx="12" fill="#fff" stroke="#64748b" stroke-width="1"/><text x="182" y="524" fill="#3b4757">API</text>
+    <rect x="58" y="540" width="76" height="24" rx="12" fill="#fff" stroke="#64748b" stroke-width="1"/><text x="96" y="556" fill="#3b4757">Voice</text>
+    <rect x="144" y="540" width="76" height="24" rx="12" fill="#fff" stroke="#64748b" stroke-width="1"/><text x="182" y="556" fill="#3b4757">Feishu</text>
+  </g>
+  <text x="139" y="588" fill="#5b6775" font-size="10.5" text-anchor="middle">one runtime,</text>
+  <text x="139" y="603" fill="#5b6775" font-size="10.5" text-anchor="middle">many channels</text>
+
+  <path d="M234 547 H266" stroke="#5b6775" stroke-width="2.4" fill="none" marker-end="url(#ar)"/>
+
+  <!-- runtime core -->
+  <g filter="url(#ds)"><rect x="268" y="486" width="250" height="122" rx="12" fill="#1f3a5f"/></g>
+  <text x="393" y="512" fill="#ffffff" font-size="15" font-weight="800" text-anchor="middle">OpenRobot Runtime</text>
+  <text x="393" y="532" fill="#bcd0e6" font-size="11.5" text-anchor="middle">agent &#183; skills &#183; robot services</text>
+  <rect x="288" y="546" width="210" height="26" rx="13" fill="#2f5380"/>
+  <text x="393" y="563" fill="#dbe7f5" font-size="11.5" font-weight="600" text-anchor="middle">NATS message bus</text>
+  <text x="393" y="592" fill="#9fb6d0" font-size="10.5" text-anchor="middle">observable &#183; recoverable &#183; schedulable</text>
+
+  <path d="M518 547 H556" stroke="#5b6775" stroke-width="2.4" fill="none" marker-end="url(#ar)"/>
+  <text x="537" y="540" fill="#5b6775" font-size="10.5" text-anchor="middle">deploy</text>
+
+  <!-- deploy target: simulation -->
+  <g filter="url(#ds)"><rect x="558" y="472" width="252" height="150" rx="12" fill="url(#g_green)" stroke="#2f9e44" stroke-width="1.4"/></g>
+  <rect x="558" y="472" width="252" height="5" rx="2.5" fill="#2f9e44"/>
+  <text x="574" y="496" fill="#14532d" font-size="13.5" font-weight="800">MuJoCo Simulation</text>
+  <text x="574" y="514" fill="#1f6b34" font-size="11">validate agent &#183; skills &#183; control chain</text>
+  <!-- mini sim robot -->
+  <g transform="translate(596,524)">
+    <rect x="-2" y="0" width="40" height="60" rx="4" fill="none" stroke="#2f9e44" stroke-width="2"/>
+    <rect x="3" y="8" width="30" height="11" rx="2" fill="#e8f6ec" stroke="#2f9e44" stroke-width="1"/>
+    <rect x="3" y="23" width="30" height="11" rx="2" fill="#e8f6ec" stroke="#2f9e44" stroke-width="1"/>
+    <rect x="3" y="38" width="30" height="11" rx="2" fill="#e8f6ec" stroke="#2f9e44" stroke-width="1"/>
+    <circle cx="5" cy="62" r="4.5" fill="#2b2f36"/><circle cx="31" cy="62" r="4.5" fill="#2b2f36"/>
+    <path d="M6,0 L4,-14 L16,-18" fill="none" stroke="#33373d" stroke-width="3"/>
+    <path d="M30,0 L40,-12 L54,-6" fill="none" stroke="#33373d" stroke-width="3"/>
+  </g>
+  <rect x="676" y="528" width="42" height="32" rx="3" fill="#9a6a3a"/><rect x="690" y="520" width="14" height="10" fill="#d83a3a"/>
+  <rect x="678" y="560" width="5" height="24" fill="#6e4a2b"/><rect x="711" y="560" width="5" height="24" fill="#6e4a2b"/>
+  <text x="734" y="540" fill="#14532d" font-size="22" font-weight="800">&#10003;</text>
+  <text x="752" y="540" fill="#1f6b34" font-size="11" font-weight="600">sim-first</text>
+  <text x="745" y="600" fill="#1f6b34" font-size="10.5" text-anchor="middle">no hardware required</text>
+
+  <path d="M810 547 H838" stroke="#5b6775" stroke-width="2.4" fill="none" marker-end="url(#ar)"/>
+  <text x="824" y="540" fill="#5b6775" font-size="9.5" text-anchor="middle">then</text>
+
+  <!-- deploy target: real robot -->
+  <g filter="url(#ds)"><rect x="840" y="472" width="232" height="150" rx="12" fill="url(#g_blue)" stroke="#2f6fd0" stroke-width="1.4"/></g>
+  <rect x="840" y="472" width="232" height="5" rx="2.5" fill="#2f6fd0"/>
+  <text x="856" y="496" fill="#0f3a6e" font-size="13.5" font-weight="800">XLeRobot &#183; Real</text>
+  <text x="856" y="514" fill="#36567c" font-size="11">SO101 arm &#183; LeKiwi base &#183; camera</text>
+  <g transform="translate(880,524)">
+    <rect x="-2" y="0" width="40" height="60" rx="4" fill="none" stroke="#2f6fd0" stroke-width="2"/>
+    <rect x="3" y="8" width="30" height="11" rx="2" fill="#eaf2fd" stroke="#2f6fd0" stroke-width="1"/>
+    <rect x="3" y="23" width="30" height="11" rx="2" fill="#eaf2fd" stroke="#2f6fd0" stroke-width="1"/>
+    <rect x="3" y="38" width="30" height="11" rx="2" fill="#eaf2fd" stroke="#2f6fd0" stroke-width="1"/>
+    <circle cx="5" cy="62" r="4.5" fill="#2b2f36"/><circle cx="31" cy="62" r="4.5" fill="#2b2f36"/>
+    <path d="M6,0 L4,-14 L16,-18" fill="none" stroke="#33373d" stroke-width="3"/>
+    <path d="M30,0 L42,-10 L56,-14" fill="none" stroke="#33373d" stroke-width="3"/>
+  </g>
+  <text x="966" y="556" fill="#0f3a6e" font-size="11.5" font-weight="700">e-stop &#183; safety gate</text>
+  <text x="966" y="574" fill="#36567c" font-size="11">execution feedback &amp; recovery</text>
+  <text x="966" y="600" fill="#36567c" font-size="10.5">Windows / Ubuntu host</text>
+</svg>
