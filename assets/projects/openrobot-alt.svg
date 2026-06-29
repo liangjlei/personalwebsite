@@ -1,20 +1,101 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" font-family="'Inter','Helvetica Neue',Arial,sans-serif">
+  <defs>
+    <linearGradient id="orb2_floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3d4552"/>
+      <stop offset="1" stop-color="#20262e"/>
+    </linearGradient>
+    <style>
+      .grid2{stroke:#5e6776;stroke-width:0.9;fill:none;}
+      .tag{fill:#1f3a5f;font-size:12.5px;font-weight:700;}
+      .tagsub{fill:#9a5a1f;font-size:10.5px;font-weight:600;}
+      .lead{stroke:#c8772e;stroke-width:1.4;fill:none;}
+    </style>
+  </defs>
   <rect width="600" height="450" fill="#ffffff"/>
   <rect x="0" y="0" width="600" height="6" fill="#1f3a5f"/>
-  <text x="30" y="44" fill="#1a2b40" font-size="21" font-weight="700">LLM Agent + Robot</text>
-  <text x="30" y="66" fill="#7a7a7a" font-size="13">from words to motion</text>
-  <g>
-    <rect x="30"  y="92"  width="262" height="150" rx="12" fill="#eef2f7" stroke="#1f3a5f" stroke-width="1.4"/>
-    <rect x="308" y="92"  width="262" height="150" rx="12" fill="#eef2f7" stroke="#1f3a5f" stroke-width="1.4"/>
-    <rect x="30"  y="258" width="262" height="150" rx="12" fill="#eef2f7" stroke="#1f3a5f" stroke-width="1.4"/>
-    <rect x="308" y="258" width="262" height="150" rx="12" fill="#eef2f7" stroke="#1f3a5f" stroke-width="1.4"/>
+  <text x="30" y="42" fill="#1a2b40" font-size="21" font-weight="700">&#8220;Put the red block in the cart&#8221;</text>
+  <text x="30" y="63" fill="#7a7a7a" font-size="12.5">one instruction &#8594; perceive &#183; plan &#183; grasp &#183; place</text>
+
+  <!-- floor -->
+  <rect x="150" y="86" width="300" height="320" rx="14" fill="url(#orb2_floor)"/>
+  <clipPath id="orb2_clip"><rect x="150" y="86" width="300" height="320" rx="14"/></clipPath>
+  <g clip-path="url(#orb2_clip)">
+    <path class="grid2" d="M150,210 L450,210"/>
+    <path class="grid2" d="M150,270 L450,270"/>
+    <path class="grid2" d="M150,330 L450,330"/>
+    <path class="grid2" d="M150,392 L450,392"/>
+    <path class="grid2" d="M230,150 L185,406"/>
+    <path class="grid2" d="M300,150 L300,406"/>
+    <path class="grid2" d="M370,150 L415,406"/>
   </g>
-  <text x="161" y="170" fill="#1f3a5f" font-size="38" font-weight="800" text-anchor="middle">understand</text>
-  <text x="161" y="206" fill="#5a5a5a" font-size="14" text-anchor="middle">LLM task parsing</text>
-  <text x="439" y="170" fill="#1f3a5f" font-size="40" font-weight="800" text-anchor="middle">plan</text>
-  <text x="439" y="206" fill="#5a5a5a" font-size="14" text-anchor="middle">skill sequencing</text>
-  <text x="161" y="336" fill="#1f3a5f" font-size="42" font-weight="800" text-anchor="middle">execute</text>
-  <text x="161" y="372" fill="#5a5a5a" font-size="14" text-anchor="middle">arm / base / camera</text>
-  <text x="439" y="336" fill="#1f3a5f" font-size="40" font-weight="800" text-anchor="middle">feedback</text>
-  <text x="439" y="372" fill="#5a5a5a" font-size="14" text-anchor="middle">state &#8594; agent</text>
+
+  <!-- table + cube -->
+  <g>
+    <polygon points="330,250 412,250 396,264 314,264" fill="#9a6a3a"/>
+    <rect x="314" y="264" width="82" height="7" fill="#7a5230"/>
+    <rect x="320" y="271" width="7" height="86" fill="#6e4a2b"/>
+    <rect x="383" y="271" width="7" height="86" fill="#6e4a2b"/>
+    <polygon points="346,232 372,232 365,241 339,241" fill="#f06a6a"/>
+    <rect x="339" y="241" width="26" height="17" fill="#d83a3a"/>
+    <rect x="365" y="236" width="7" height="22" fill="#b62a2a"/>
+  </g>
+
+  <!-- XLeRobot dual-arm cart (larger) -->
+  <g stroke-linejoin="round" stroke-linecap="round">
+    <ellipse cx="232" cy="392" rx="74" ry="11" fill="#1a1f27" opacity="0.55"/>
+    <rect x="180" y="232" width="104" height="170" rx="8" fill="none" stroke="#dfe4ea" stroke-width="3.5"/>
+    <rect x="186" y="256" width="92" height="30" rx="5" fill="#eef1f4" stroke="#b9c0c9" stroke-width="1.6"/>
+    <rect x="186" y="296" width="92" height="30" rx="5" fill="#e3e7ec" stroke="#b9c0c9" stroke-width="1.6"/>
+    <rect x="186" y="336" width="92" height="30" rx="5" fill="#d7dce2" stroke="#b9c0c9" stroke-width="1.6"/>
+    <rect x="176" y="224" width="112" height="11" rx="3" fill="#cfd5dc"/>
+    <circle cx="196" cy="398" r="11" fill="#2b2f36" stroke="#11141a" stroke-width="2.4"/>
+    <circle cx="268" cy="398" r="11" fill="#2b2f36" stroke="#11141a" stroke-width="2.4"/>
+    <circle cx="196" cy="398" r="3.6" fill="#6a7180"/>
+    <circle cx="268" cy="398" r="3.6" fill="#6a7180"/>
+
+    <!-- left arm folded -->
+    <g stroke="#33373d" stroke-width="7" fill="none">
+      <path d="M204,224 L204,198 L224,186"/>
+      <path d="M224,186 L248,192"/>
+    </g>
+    <circle cx="204" cy="224" r="5" fill="#2b2f36"/>
+    <circle cx="204" cy="198" r="5" fill="#2b2f36"/>
+    <circle cx="224" cy="186" r="5" fill="#2b2f36"/>
+    <rect x="244" y="181" width="16" height="12" rx="2" fill="#23262b"/>
+    <circle cx="252" cy="187" r="3" fill="#7fb4ff"/>
+
+    <!-- right arm reaching to grasp the cube -->
+    <g stroke="#33373d" stroke-width="7" fill="none">
+      <path d="M256,224 L274,196 L304,190"/>
+      <path d="M304,190 L334,212 L350,244"/>
+    </g>
+    <circle cx="256" cy="224" r="5" fill="#2b2f36"/>
+    <circle cx="274" cy="196" r="5" fill="#2b2f36"/>
+    <circle cx="304" cy="190" r="5" fill="#2b2f36"/>
+    <circle cx="334" cy="212" r="5" fill="#2b2f36"/>
+    <!-- open gripper fingers around cube -->
+    <g stroke="#23262b" stroke-width="3.5" fill="none">
+      <path d="M346,240 L340,232"/>
+      <path d="M356,240 L364,232"/>
+    </g>
+    <rect x="344" y="240" width="14" height="9" rx="2" fill="#23262b"/>
+    <circle cx="351" cy="244.5" r="2.6" fill="#7fb4ff"/>
+  </g>
+
+  <!-- callouts -->
+  <circle cx="252" cy="187" r="13" fill="none" stroke="#c8772e" stroke-width="1.6" stroke-dasharray="3 3"/>
+  <path class="lead" d="M252,174 L252,150 L470,150"/>
+  <text class="tag" x="476" y="148">Head camera</text>
+  <text class="tagsub" x="476" y="163">scene perception</text>
+
+  <circle cx="351" cy="244" r="14" fill="none" stroke="#c8772e" stroke-width="1.6" stroke-dasharray="3 3"/>
+  <path class="lead" d="M365,244 L470,244"/>
+  <text class="tag" x="476" y="242">Grasp skill</text>
+  <text class="tagsub" x="476" y="257">pick &#8594; place in basket</text>
+
+  <path class="lead" d="M232,402 L232,420 L120,420"/>
+  <text class="tag" x="116" y="418" text-anchor="end">Mobile base</text>
+
+  <path class="lead" d="M180,300 L110,300"/>
+  <text class="tag" x="104" y="298" text-anchor="end">Storage baskets</text>
 </svg>
