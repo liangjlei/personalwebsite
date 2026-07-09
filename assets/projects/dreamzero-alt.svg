@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" font-family="'Inter','Helvetica Neue',Arial,sans-serif">
+  <defs>
+    <linearGradient id="pg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#fbfcfe"/></linearGradient>
+    <filter id="ds2" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="1.4" stdDeviation="1.8" flood-color="#1a2b40" flood-opacity="0.16"/></filter>
+    <marker id="m2" markerWidth="8" markerHeight="8" refX="5.6" refY="2.8" orient="auto"><path d="M0,0 L5.6,2.8 L0,5.6 Z" fill="#46566a"/></marker>
+  </defs>
+
+  <rect width="600" height="450" fill="url(#pg2)"/>
+  <rect x="0" y="0" width="600" height="6" fill="#1f3a5f"/>
+
+  <text x="28" y="40" font-size="19" font-weight="700" fill="#16283f">Synchronized rollout</text>
+  <text x="28" y="60" font-size="12.5" fill="#5a6b80">input &#8594; Wan-generated prediction &#8594; ground-truth future</text>
+
+  <g filter="url(#ds2)"><rect x="28" y="92" width="168" height="120" rx="8" fill="#0f1722" stroke="#2f6fd0" stroke-width="1.4"/></g>
+  <g filter="url(#ds2)"><rect x="216" y="92" width="168" height="120" rx="8" fill="#0f1722" stroke="#c026a6" stroke-width="1.6"/></g>
+  <g filter="url(#ds2)"><rect x="404" y="92" width="168" height="120" rx="8" fill="#0f1722" stroke="#0d9488" stroke-width="1.4"/></g>
+
+  <g opacity="0.85">
+    <rect x="40" y="150" width="60" height="50" rx="4" fill="#26527f"/>
+    <circle cx="150" cy="135" r="16" fill="#3aa0a0"/>
+    <rect x="228" y="150" width="60" height="50" rx="4" fill="#26527f"/>
+    <circle cx="338" cy="135" r="16" fill="#3aa0a0"/>
+    <rect x="416" y="150" width="60" height="50" rx="4" fill="#26527f"/>
+    <circle cx="526" cy="135" r="16" fill="#3aa0a0"/>
+    <rect x="150" y="182" width="34" height="26" fill="#05070a"/>
+    <rect x="338" y="182" width="34" height="26" fill="#05070a"/>
+    <rect x="526" y="182" width="34" height="26" fill="#05070a"/>
+  </g>
+
+  <text x="112" y="108" text-anchor="middle" font-size="11" font-weight="600" fill="#8fc2ff">cond t=0 (input)</text>
+  <text x="300" y="108" text-anchor="middle" font-size="11" font-weight="600" fill="#f2a6df">pred k=2 (Wan)</text>
+  <text x="488" y="108" text-anchor="middle" font-size="11" font-weight="600" fill="#8fe0d6">gt real +10</text>
+
+  <line x1="196" y1="152" x2="214" y2="152" stroke="#46566a" stroke-width="1.6" marker-end="url(#m2)"/>
+  <line x1="384" y1="152" x2="402" y2="152" stroke="#46566a" stroke-width="1.6" marker-end="url(#m2)"/>
+
+  <g filter="url(#ds2)"><rect x="28" y="238" width="544" height="52" rx="9" fill="#ffffff" stroke="#d7deea" stroke-width="1.2"/></g>
+  <text x="44" y="260" font-size="12" font-weight="600" fill="#33465e">Windowed prediction</text>
+  <text x="44" y="278" font-size="11" fill="#5a6b80">window 0 &#183; start frame 0 &#183; action step k / 23</text>
+  <g>
+    <rect x="330" y="256" width="228" height="10" rx="5" fill="#eef1f6"/>
+    <rect x="330" y="256" width="96" height="10" rx="5" fill="#7B61FF"/>
+    <circle cx="426" cy="261" r="6.5" fill="#4b3bbd"/>
+  </g>
+
+  <g filter="url(#ds2)"><rect x="28" y="312" width="544" height="112" rx="10" fill="#ffffff" stroke="#d7deea" stroke-width="1.2"/></g>
+  <text x="44" y="336" font-size="12.5" font-weight="600" fill="#1f3a5f">Aloha-LeKiwi teleoperation &#183; LeRobot format</text>
+  <text x="44" y="360" font-size="11.5" fill="#5a6b80">Real bimanual demonstrations supervise SFT of the video</text>
+  <text x="44" y="378" font-size="11.5" fill="#5a6b80">backbone; the model imagines futures consistent with the</text>
+  <text x="44" y="396" font-size="11.5" fill="#5a6b80">commanded action and regresses the executable joint plan.</text>
+  <text x="44" y="416" font-size="11" fill="#8a94a6">Use: model-based rollout &#183; synthetic data &#183; dynamics prior</text>
+</svg>

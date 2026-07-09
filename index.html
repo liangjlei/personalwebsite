@@ -175,6 +175,43 @@
           <tbody>
             <tr
               class="paper highlight"
+              onmouseover="dz_start()" onmouseout="dz_stop()"
+            >
+              <td class="paper-thumb">
+                <div class="one">
+                  <div class="two" id="dz_image">
+                    <img class="frame-a" src="./assets/projects/dreamzero-alt.svg" alt="" aria-hidden="true" />
+                  </div>
+                  <img class="frame-b" src="./assets/projects/dreamzero.svg" alt="DreamZero action-conditioned world model: conditioning frame and action plan into a Wan video-diffusion backbone, predicting future observations and joint trajectories" />
+                </div>
+                <script type="text/javascript">
+                  function dz_start() { document.getElementById('dz_image').style.opacity = "1"; }
+                  function dz_stop()  { document.getElementById('dz_image').style.opacity = "0"; }
+                  dz_stop()
+                </script>
+              </td>
+              <td class="paper-body">
+                <span class="papertitle">DreamZero: An Action-Conditioned Robotic World Model for Joint Video and Action Prediction</span>
+                <br />
+                <span class="pub-authors">Jinglei Liang</span>
+                <br />
+                <em class="pub-venue">Research project</em>, 2026
+                <br />
+                <span class="project-links">
+                  <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/dreamzero-world-model">project page</a>
+                  /
+                  <a href="https://github.com/liangjlei/personalwebsite/tree/main/projects/dreamzero-world-model#readme">report</a>
+                  /
+                  <a href="https://github.com/liangjlei/personalwebsite/blob/main/projects/dreamzero-world-model/assets/rollout_ep000.mp4">rollout video</a>
+                </span>
+                <p>
+                  A generative <strong>world model</strong> for real-robot manipulation. From a single conditioning frame and a proposed action plan, DreamZero adapts a pretrained <strong>Wan</strong> video-diffusion transformer into an <strong>action-conditioned</strong> generator that jointly predicts the future camera observations the robot would see and the executable joint trajectory (<code>right_j0&hellip;right_gripper</code>) that produces them. It is fine-tuned (SFT) on <strong>Aloha-LeKiwi</strong> teleoperation demonstrations in the Hugging Face <strong>LeRobot</strong> format, turning a video backbone into a learned simulator for model-based rollout, synthetic-data generation, and dynamics-grounded policy learning.
+                </p>
+              </td>
+            </tr>
+
+            <tr
+              class="paper highlight"
               onmouseover="ppg_start()" onmouseout="ppg_stop()"
             >
               <td class="paper-thumb">

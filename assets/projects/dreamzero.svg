@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" font-family="'Inter','Helvetica Neue',Arial,sans-serif">
+  <defs>
+    <linearGradient id="pg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#fbfcfe"/></linearGradient>
+    <filter id="ds" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="1.4" stdDeviation="1.8" flood-color="#1a2b40" flood-opacity="0.16"/></filter>
+    <marker id="m" markerWidth="8" markerHeight="8" refX="5.6" refY="2.8" orient="auto"><path d="M0,0 L5.6,2.8 L0,5.6 Z" fill="#46566a"/></marker>
+    <marker id="mp" markerWidth="8" markerHeight="8" refX="5.6" refY="2.8" orient="auto"><path d="M0,0 L5.6,2.8 L0,5.6 Z" fill="#c026a6"/></marker>
+    <marker id="mt" markerWidth="8" markerHeight="8" refX="5.6" refY="2.8" orient="auto"><path d="M0,0 L5.6,2.8 L0,5.6 Z" fill="#0d9488"/></marker>
+  </defs>
+
+  <rect width="600" height="450" fill="url(#pg)"/>
+  <rect x="0" y="0" width="600" height="6" fill="#1f3a5f"/>
+
+  <text x="28" y="40" font-size="19" font-weight="700" fill="#16283f">DreamZero</text>
+  <text x="28" y="60" font-size="12.5" fill="#5a6b80">Action-conditioned world model &#183; joint video + action prediction</text>
+
+  <!-- inputs -->
+  <g filter="url(#ds)">
+    <rect x="28" y="92" width="150" height="70" rx="9" fill="#eef4fc" stroke="#2f6fd0" stroke-width="1.3"/>
+  </g>
+  <text x="103" y="120" text-anchor="middle" font-size="13" font-weight="600" fill="#1f3a5f">Conditioning frame</text>
+  <text x="103" y="140" text-anchor="middle" font-size="12" fill="#46566a">observation o_t</text>
+
+  <g filter="url(#ds)">
+    <rect x="28" y="184" width="150" height="70" rx="9" fill="#f6ecf5" stroke="#c026a6" stroke-width="1.3"/>
+  </g>
+  <text x="103" y="212" text-anchor="middle" font-size="13" font-weight="600" fill="#7a2674">Action plan</text>
+  <text x="103" y="232" text-anchor="middle" font-size="12" fill="#8a4a80">a_t &#8230; a_{t+k}</text>
+
+  <!-- backbone -->
+  <g filter="url(#ds)">
+    <rect x="232" y="112" width="150" height="122" rx="11" fill="#ffffff" stroke="#7B61FF" stroke-width="1.6"/>
+  </g>
+  <text x="307" y="150" text-anchor="middle" font-size="14" font-weight="700" fill="#4b3bbd">Wan</text>
+  <text x="307" y="170" text-anchor="middle" font-size="12" fill="#46566a">video-diffusion</text>
+  <text x="307" y="186" text-anchor="middle" font-size="12" fill="#46566a">transformer (SFT)</text>
+  <text x="307" y="212" text-anchor="middle" font-size="11" fill="#7a6bd6">+ action conditioning</text>
+  <text x="307" y="226" text-anchor="middle" font-size="11" fill="#7a6bd6">+ action head</text>
+
+  <!-- outputs -->
+  <g filter="url(#ds)">
+    <rect x="436" y="92" width="150" height="70" rx="9" fill="#eef4fc" stroke="#2f6fd0" stroke-width="1.3"/>
+  </g>
+  <text x="511" y="120" text-anchor="middle" font-size="13" font-weight="600" fill="#1f3a5f">Predicted video</text>
+  <text x="511" y="140" text-anchor="middle" font-size="12" fill="#46566a">&#244;_{t+1&#8230;t+k}</text>
+
+  <g filter="url(#ds)">
+    <rect x="436" y="184" width="150" height="70" rx="9" fill="#e7f5f2" stroke="#0d9488" stroke-width="1.3"/>
+  </g>
+  <text x="511" y="212" text-anchor="middle" font-size="13" font-weight="600" fill="#0b6b62">Predicted joints</text>
+  <text x="511" y="232" text-anchor="middle" font-size="12" fill="#2a8a80">&#226;_{t+1&#8230;t+k}</text>
+
+  <!-- arrows in -->
+  <line x1="178" y1="127" x2="230" y2="145" stroke="#46566a" stroke-width="1.6" marker-end="url(#m)"/>
+  <line x1="178" y1="219" x2="230" y2="200" stroke="#c026a6" stroke-width="1.6" marker-end="url(#mp)"/>
+  <!-- arrows out -->
+  <line x1="382" y1="145" x2="434" y2="127" stroke="#2f6fd0" stroke-width="1.6" marker-end="url(#m)"/>
+  <line x1="382" y1="200" x2="434" y2="219" stroke="#0d9488" stroke-width="1.6" marker-end="url(#mt)"/>
+
+  <text x="307" y="256" text-anchor="middle" font-size="10.5" fill="#8a94a6">denoising over k future steps</text>
+
+  <!-- joint traces panel -->
+  <g filter="url(#ds)">
+    <rect x="28" y="292" width="544" height="132" rx="10" fill="#ffffff" stroke="#d7deea" stroke-width="1.2"/>
+  </g>
+  <text x="44" y="313" font-size="12" font-weight="600" fill="#33465e">Predicted vs. ground-truth joint traces</text>
+  <line x1="44" y1="360" x2="556" y2="360" stroke="#e5eaf2" stroke-width="1"/>
+  <!-- ground truth -->
+  <path d="M48 388 C120 340 170 402 240 356 C310 320 360 398 430 360 C490 334 528 372 552 350" fill="none" stroke="#0d9488" stroke-width="2.2"/>
+  <!-- prediction (dashed, offset) -->
+  <path d="M48 392 C120 346 170 396 240 362 C310 328 360 390 430 366 C490 342 528 366 552 356" fill="none" stroke="#c026a6" stroke-width="2" stroke-dasharray="5 4"/>
+  <g font-size="10.5">
+    <rect x="430" y="298" width="14" height="4" fill="#0d9488"/><text x="450" y="303" fill="#5a6b80">ground truth</text>
+    <rect x="430" y="310" width="14" height="4" fill="#c026a6"/><text x="450" y="315" fill="#5a6b80">prediction</text>
+  </g>
+  <text x="300" y="418" text-anchor="middle" font-size="10" fill="#8a94a6">frame in episode &#183; right_j0 &#8230; right_gripper</text>
+</svg>

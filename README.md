@@ -11,6 +11,7 @@ perception, speech interaction, and vision–language–action models.
 ## Projects
 | Project | Area |
 |---|---|
+| [DreamZero — Action-Conditioned Robotic World Model](projects/dreamzero-world-model) | World models · video diffusion · VLA |
 | [Streaming Multimodal Speech Grounding](projects/multimodal-speech-grounding) | Speech + perception |
 | [Parameter-Efficient VLA Adaptation](projects/vla-parameter-efficient-adaptation) | Vision–language–action |
 | [Aloha π0.5 LeRobot (real-robot pipeline)](projects/aloha-pi05-lerobot) | Real-robot VLA · teleop + remote inference |
