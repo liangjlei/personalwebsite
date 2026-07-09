@@ -28,7 +28,7 @@
   </g>
 
   <text x="112" y="108" text-anchor="middle" font-size="11" font-weight="600" fill="#8fc2ff">cond t=0 (input)</text>
-  <text x="300" y="108" text-anchor="middle" font-size="11" font-weight="600" fill="#f2a6df">pred k=2 (Wan)</text>
+  <text x="300" y="108" text-anchor="middle" font-size="11" font-weight="600" fill="#f2a6df">pred k=2 (Wan2.2)</text>
   <text x="488" y="108" text-anchor="middle" font-size="11" font-weight="600" fill="#8fe0d6">gt real +10</text>
 
   <line x1="196" y1="152" x2="214" y2="152" stroke="#46566a" stroke-width="1.6" marker-end="url(#m2)"/>
